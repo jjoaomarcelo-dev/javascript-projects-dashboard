@@ -1,10 +1,10 @@
-# JavaScript Study Dashboard
+# JavaScript Projects Dashboard
 
-Projeto pessoal para registrar meus estudos e acompanhar minha evolução em JavaScript.
+Dashboard pessoal para registrar e apresentar os exercícios e projetos que desenvolvo em JavaScript.
 
 ## Sobre o projeto
 
-Estou desenvolvendo esse dashboard enquanto estudo, para praticar o que aprendo e reunir minhas aulas, exercícios e pequenos projetos em um só lugar. A ideia é que, com o tempo, também seja possível acessar o código dos exercícios e testá-los no navegador.
+Estou desenvolvendo esse dashboard para organizar os exercícios e projetos que faço durante meus estudos de JavaScript. A proposta é manter um histórico da minha evolução prática e, com o tempo, permitir o acesso ao código e à execução de cada trabalho pelo navegador.
 
 ## Tecnologias
 
@@ -24,17 +24,17 @@ Conforme avanço nos estudos, pretendo incorporar TypeScript, React e outras tec
 
 - [x] Estrutura inicial do painel
 - [x] Layout responsivo
-- [x] Campos para título, tipo, tema, duração, data e status
+- [x] Formulário de cadastro
 - [x] Leitura e validação dos campos
-- [x] Cadastro e listagem de estudos
+- [x] Cadastro e listagem de exercícios e projetos
 - [ ] Armazenamento com localStorage
 - [ ] Edição e remoção de registros
-- [ ] Resumo de estudos concluídos, pendentes e tempo total
-- [ ] Filtros por tipo e status
-- [ ] Busca de estudos
-- [ ] Exercícios associados às aulas, com links para o código e a execução
+- [ ] Resumo de exercícios e projetos
+- [ ] Filtros por categoria e status
+- [ ] Busca por título ou tema
+- [ ] Links para visualizar o código e executar os trabalhos
 
-Vou começar pelo cadastro e pela listagem. Os outros recursos serão adicionados depois que essa primeira versão estiver funcionando.
+A primeira versão terá o cadastro e a listagem dos registros. Os outros recursos serão adicionados depois que essa base estiver funcionando.
 
 ## Como executar
 
@@ -46,7 +46,7 @@ Não é necessário instalar dependências.
 ## Estrutura de arquivos
 
 ```text
-javascript-study-dashboard/
+javascript-projects-dashboard/
 ├── index.html   # Estrutura da página
 ├── style.css    # Estilos e responsividade
 ├── script.js    # Lógica do painel
@@ -55,4 +55,4 @@ javascript-study-dashboard/
 
 ## Status
 
-O projeto está no início. A estrutura da página e o layout responsivo estão prontos, com campos para título, tipo, tema, tempo estudado, data e status. O cadastro, a listagem e o armazenamento dos registros ainda serão implementados.
+O projeto está sendo adaptado para funcionar como um catálogo dos exercícios e projetos que desenvolvo em JavaScript. A estrutura da página e o layout responsivo já estão prontos, e o formulário será atualizado para atender ao novo objetivo.
