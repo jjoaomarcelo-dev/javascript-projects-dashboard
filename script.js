@@ -87,7 +87,9 @@ const exibirRegistros = () => {
             ? "Concluído"
             : "Em desenvolvimento"
 
-        const categoriaFormatada = formatarTexto(registro.categoria)
+        const categoriaFormatada = registro.categoria === "exercicio"
+            ? "Exercício"
+            : "Projeto"
 
         const registroCard = document.createElement("div")
         registroCard.classList.add("registro-card")
