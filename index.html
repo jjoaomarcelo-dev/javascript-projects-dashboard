@@ -4,55 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Study Dashboard</title>
+    <title>JavaScript Projects Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <main class="cartao">
         <header>
-            <p class="marca"><span aria-hidden="true">JS</span> Meu espaço de estudos</p>
-            <h1>JavaScript Study Dashboard</h1>
-            <p>Projeto pessoal para registrar meus estudos e acompanhar minha evolução em JavaScript.</p>
+            <p class="marca"><span aria-hidden="true">JS</span> Meus projetos em JavaScript</p>
+            <h1>JavaScript Projects Dashboard</h1>
+            <p>Exercícios e projetos desenvolvidos durante minha evolução em JavaScript.</p>
         </header>
 
         <section class="formulario" aria-labelledby="titulo-formulario">
             <div class="cabecalho-secao">
-                <h2 id="titulo-formulario">Registrar estudo</h2>
-                <p class="descricao-secao">Registro de estudos por tipo, tema, duração, data e status.</p>
+                <h2 id="titulo-formulario">Adicionar exercício ou projeto</h2>
+                <p class="descricao-secao">Registro dos exercícios e projetos que desenvolvo em JavaScript.</p>
             </div>
 
             <div class="campoForm campo-titulo">
                 <label for="f_titulo">Título</label>
-                <input type="text" name="titulo" id="f_titulo" placeholder="Ex.: Aula sobre objetos">
+                <input type="text" name="titulo" id="f_titulo" placeholder="Ex.: Lista de presença">
                 <span id="erroTitulo" aria-live="polite"></span>
             </div>
 
             <div class="campoForm">
-                <label for="f_tipo">Tipo</label>
-                <select name="tipo" id="f_tipo">
-                    <option value="">Selecione o tipo</option>
-                    <option value="aula">Aula</option>
+                <label for="f_categoria">Categoria</label>
+                <select name="categoria" id="f_categoria">
+                    <option value="">Selecione a categoria</option>
                     <option value="exercicio">Exercício</option>
                     <option value="projeto">Projeto</option>
                 </select>
-                <span id="erroTipo" aria-live="polite"></span>
+                <span id="erroCategoria" aria-live="polite"></span>
             </div>
 
             <div class="campoForm">
-                <label for="f_tema">Tema estudado</label>
-                <input type="text" name="tema" id="f_tema" placeholder="Ex.: Objetos e arrays">
+                <label for="f_tema">Tema principal</label>
+                <input type="text" name="tema" id="f_tema" placeholder="Ex.: Arrays e objetos">
                 <span id="erroTema" aria-live="polite"></span>
             </div>
 
             <div class="campoForm">
-                <label for="f_tempo">Tempo estudado (minutos)</label>
-                <input type="number" name="tempo" id="f_tempo" placeholder="Ex.: 30" min="1" step="1">
-                <span id="erroTempo" aria-live="polite"></span>
-            </div>
-
-            <div class="campoForm">
-                <label for="f_data">Data do estudo</label>
+                <label for="f_data">Data</label>
                 <input type="date" name="data" id="f_data" min="1900-01-01" max="2099-12-31">
                 <span id="erroData" aria-live="polite"></span>
             </div>
@@ -60,22 +53,29 @@
             <div class="campoForm">
                 <label for="f_status">Status</label>
                 <select name="status" id="f_status">
-                    <option value="pendente">Pendente</option>
+                    <option value="em-desenvolvimento">Em desenvolvimento</option>
                     <option value="concluido" selected>Concluído</option>
                 </select>
             </div>
 
-            <button type="button" id="btnAdicionar">Adicionar estudo</button>
+            <div class="campoForm campo-descricao">
+                <label for="f_descricao">Descrição</label>
+                <textarea name="descricao" id="f_descricao" rows="4"
+                    placeholder="Descreva brevemente o que foi desenvolvido."></textarea>
+                <span id="erroDescricao" aria-live="polite"></span>
+            </div>
+
+            <button type="button" id="btnAdicionar">Adicionar exercício ou projeto</button>
         </section>
 
         <section class="resultado" aria-live="polite" aria-labelledby="titulo-resultado">
             <div class="cabecalho-secao">
-                <h2 id="titulo-resultado">Meus estudos</h2>
-                <p class="descricao-secao">Histórico de aulas, exercícios e projetos estudados.</p>
+                <h2 id="titulo-resultado">Exercícios e projetos</h2>
+                <p class="descricao-secao">Exercícios e projetos desenvolvidos durante meus estudos de JavaScript.</p>
             </div>
-            <div class="res" id="listaEstudos">
+            <div class="res" id="listaRegistros">
                 <div class="estado-vazio">
-                    <strong>Nenhum estudo registrado ainda.</strong>
+                    <strong>Nenhum exercício ou projeto registrado ainda.</strong>
                 </div>
             </div>
         </section>

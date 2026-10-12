@@ -1,45 +1,45 @@
 // Campos do formulário
 const f_titulo = document.querySelector("#f_titulo")
-const f_tipo = document.querySelector("#f_tipo")
+const f_categoria = document.querySelector("#f_categoria")
 const f_tema = document.querySelector("#f_tema")
-const f_tempo = document.querySelector("#f_tempo")
 const f_data = document.querySelector("#f_data")
 const f_status = document.querySelector("#f_status")
+const f_descricao = document.querySelector("#f_descricao")
 
 // Mensagens de validação
 const erroTitulo = document.querySelector("#erroTitulo")
-const erroTipo = document.querySelector("#erroTipo")
+const erroCategoria = document.querySelector("#erroCategoria")
 const erroTema = document.querySelector("#erroTema")
-const erroTempo = document.querySelector("#erroTempo")
 const erroData = document.querySelector("#erroData")
+const erroDescricao = document.querySelector("#erroDescricao")
 
 const btnAdicionar = document.querySelector("#btnAdicionar")
-const listaEstudos = document.querySelector("#listaEstudos")
+const listaRegistros = document.querySelector("#listaRegistros")
 
-const estudos = []
+const registros = []
 
 const validarCampos = () => {
     let camposValidos = true
 
     const titulo = f_titulo.value.trim()
-    const tipo = f_tipo.value
+    const categoria = f_categoria.value
     const tema = f_tema.value.trim()
-    const tempo = f_tempo.value
     const data = f_data.value
+    const descricao = f_descricao.value.trim()
 
     erroTitulo.textContent = ""
-    erroTipo.textContent = ""
+    erroCategoria.textContent = ""
     erroTema.textContent = ""
-    erroTempo.textContent = ""
     erroData.textContent = ""
+    erroDescricao.textContent = ""
 
     if (titulo === "") {
         erroTitulo.textContent = "*Campo obrigatório"
         camposValidos = false
     }
 
-    if (tipo === "") {
-        erroTipo.textContent = "*Campo obrigatório"
+    if (categoria === "") {
+        erroCategoria.textContent = "*Campo obrigatório"
         camposValidos = false
     }
 
@@ -48,19 +48,16 @@ const validarCampos = () => {
         camposValidos = false
     }
 
-    if (tempo === "") {
-        erroTempo.textContent = "*Campo obrigatório"
-        camposValidos = false
-    } else if (Number(tempo) <= 0 || !Number.isInteger(Number(tempo))) {
-        erroTempo.textContent = "*Informe uma duração válida."
-        camposValidos = false
-    }
-
     if (data === "") {
         erroData.textContent = "*Campo obrigatório"
         camposValidos = false
     } else if (!f_data.validity.valid) {
         erroData.textContent = "*Informe uma data válida entre 1900 e 2099."
+        camposValidos = false
+    }
+
+    if (descricao === "") {
+        erroDescricao.textContent = "*Campo obrigatório"
         camposValidos = false
     }
 
@@ -76,60 +73,60 @@ const formatarTexto = (texto) => {
         .join(" ")
 }
 
-const exibirEstudos = () => {
-    listaEstudos.innerHTML = ""
+const exibirRegistros = () => {
+    listaRegistros.innerHTML = ""
 
-    estudos.forEach((estudo) => {
+    registros.forEach((registro) => {
 
-        const dataFormatada = estudo.data
+        const dataFormatada = registro.data
             .split("-")
             .reverse()
             .join("/")
 
-        const statusFormatado = estudo.status === "concluido"
+        const statusFormatado = registro.status === "concluido"
             ? "Concluído"
-            : "Pendente"
+            : "Em desenvolvimento"
 
-        const tipoFormatado = formatarTexto(estudo.tipo)
+        const categoriaFormatada = formatarTexto(registro.categoria)
 
-        const estudoCard = document.createElement("div")
-        estudoCard.classList.add("estudo-card")
+        const registroCard = document.createElement("div")
+        registroCard.classList.add("registro-card")
 
-        const estudoTitulo = document.createElement("h3")
-        estudoTitulo.textContent = estudo.titulo
-        estudoCard.append(estudoTitulo)
+        const registroTitulo = document.createElement("h3")
+        registroTitulo.textContent = registro.titulo
+        registroCard.append(registroTitulo)
 
-        const estudoTipo = document.createElement("p")
-        estudoTipo.textContent = `Tipo: ${tipoFormatado}`
-        estudoCard.append(estudoTipo)
+        const registroCategoria = document.createElement("p")
+        registroCategoria.textContent = `Categoria: ${categoriaFormatada}`
+        registroCard.append(registroCategoria)
 
-        const estudoTema = document.createElement("p")
-        estudoTema.textContent = `Tema estudado: ${estudo.tema}`
-        estudoCard.append(estudoTema)
+        const registroTema = document.createElement("p")
+        registroTema.textContent = `Tema principal: ${registro.tema}`
+        registroCard.append(registroTema)
 
-        const estudoTempo = document.createElement("p")
-        estudoTempo.textContent = `Tempo estudado: ${estudo.tempo} minutos`
-        estudoCard.append(estudoTempo)
+        const registroData = document.createElement("p")
+        registroData.textContent = `Data: ${dataFormatada}`
+        registroCard.append(registroData)
 
-        const estudoData = document.createElement("p")
-        estudoData.textContent = `Data do estudo: ${dataFormatada}`
-        estudoCard.append(estudoData)
+        const registroDescricao = document.createElement("p")
+        registroDescricao.textContent = `Descrição: ${registro.descricao}`
+        registroCard.append(registroDescricao)
 
-        const estudoStatus = document.createElement("p")
-        estudoStatus.textContent = `Status: ${statusFormatado}`
-        estudoCard.append(estudoStatus)
+        const registroStatus = document.createElement("p")
+        registroStatus.textContent = `Status: ${statusFormatado}`
+        registroCard.append(registroStatus)
 
-        listaEstudos.append(estudoCard)
+        listaRegistros.append(registroCard)
     })
 }
 
 const limparCampos = () => {
     f_titulo.value = ""
-    f_tipo.value = ""
+    f_categoria.value = ""
     f_tema.value = ""
-    f_tempo.value = ""
     f_data.value = ""
     f_status.value = "concluido"
+    f_descricao.value = ""
 }
 
 btnAdicionar.addEventListener("click", () => {
@@ -142,16 +139,16 @@ btnAdicionar.addEventListener("click", () => {
     const tituloFormatado = formatarTexto(f_titulo.value)
     const temaFormatado = formatarTexto(f_tema.value)
 
-    const estudo = {
+    const registro = {
         titulo: tituloFormatado,
-        tipo: f_tipo.value,
+        categoria: f_categoria.value,
         tema: temaFormatado,
-        tempo: Number(f_tempo.value),
         data: f_data.value,
-        status: f_status.value
+        status: f_status.value,
+        descricao: f_descricao.value.trim()
     }
 
-    estudos.push(estudo)
-    exibirEstudos()
+    registros.push(registro)
+    exibirRegistros()
     limparCampos()
 })
