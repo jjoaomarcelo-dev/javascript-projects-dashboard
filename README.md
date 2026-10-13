@@ -4,7 +4,7 @@ Dashboard pessoal para registrar e apresentar os exercícios e projetos que dese
 
 ## Sobre o projeto
 
-Estou desenvolvendo esse dashboard para organizar os exercícios e projetos que faço durante meus estudos de JavaScript. A proposta é manter um histórico da minha evolução prática e, com o tempo, permitir o acesso ao código e à execução de cada trabalho pelo navegador.
+Estou desenvolvendo esse dashboard para organizar os exercícios e projetos que faço durante meus estudos de JavaScript. A proposta é manter um histórico da minha evolução prática e, com o tempo, permitir o acesso ao código e à execução de cada exercício ou projeto pelo navegador.
 
 ## Tecnologias
 
@@ -20,21 +20,36 @@ Escrevo o código dos exercícios e das funcionalidades que estou estudando sem 
 
 Conforme avanço nos estudos, pretendo incorporar TypeScript, React e outras tecnologias ao projeto.
 
-## Etapas
+## Funcionalidades atuais
 
 - [x] Estrutura inicial do painel
 - [x] Layout responsivo
-- [x] Formulário de cadastro
+- [x] Formulário para exercícios e projetos
 - [x] Leitura e validação dos campos
 - [x] Cadastro e listagem de exercícios e projetos
+
+## Próximas etapas
+
+### Primeira versão
+
 - [ ] Armazenamento com localStorage
 - [ ] Edição e remoção de registros
 - [ ] Resumo de exercícios e projetos
 - [ ] Filtros por categoria e status
 - [ ] Busca por título ou tema
-- [ ] Links para visualizar o código e executar os trabalhos
+- [ ] Links para visualizar o código
+- [ ] Links para executar exercícios e projetos no navegador
+- [ ] Publicação do dashboard
 
-A primeira versão terá o cadastro e a listagem dos registros. Os outros recursos serão adicionados depois que essa base estiver funcionando.
+### Evolução full stack
+
+- [ ] Criar uma API para gerenciar os registros
+- [ ] Armazenar os dados em banco de dados
+- [ ] Adicionar autenticação para proteger o cadastro e a edição
+- [ ] Disponibilizar os mesmos registros para todos os visitantes
+- [ ] Migrar gradualmente o projeto para TypeScript e React
+
+As funcionalidades serão desenvolvidas aos poucos, acompanhando os conteúdos que estudo. A primeira versão continuará usando apenas HTML, CSS e JavaScript.
 
 ## Como executar
 
@@ -55,4 +70,4 @@ javascript-projects-dashboard/
 
 ## Status
 
-O projeto está sendo adaptado para funcionar como um catálogo dos exercícios e projetos que desenvolvo em JavaScript. A estrutura da página e o layout responsivo já estão prontos, e o formulário será atualizado para atender ao novo objetivo.
+O cadastro, a validação e a listagem já estão funcionando. O próximo passo será implementar o localStorage para manter os registros salvos no navegador.
