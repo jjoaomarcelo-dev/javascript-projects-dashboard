@@ -14,11 +14,11 @@ Estou desenvolvendo esse dashboard para organizar os exercícios e projetos que 
 
 ## Objetivo de aprendizado
 
-Estou construindo o projeto por etapas para consolidar meus conhecimentos em JavaScript, com foco em funções, arrays, objetos, eventos e manipulação do DOM.
+Estou desenvolvendo este projeto por etapas, acompanhando minha evolução nos estudos de JavaScript. Cada funcionalidade é implementada para aplicar conceitos na prática, compreender a lógica envolvida e desenvolver autonomia na resolução de problemas.
 
-Escrevo o código dos exercícios e das funcionalidades que estou estudando sem utilizar IA para gerá-lo. O objetivo é desenvolver autonomia em programação e registrar minha evolução por meio de implementações que consigo compreender e explicar.
+Nesta etapa, meu foco está nos fundamentos da linguagem, como funções, arrays, objetos, eventos, validação de formulários e manipulação do DOM. Conforme o projeto evoluir, o dashboard reunirá exercícios e projetos que já desenvolvi e que continuarei desenvolvendo durante meus estudos, com acesso ao código e à execução pelo navegador.
 
-Conforme avanço nos estudos, pretendo incorporar TypeScript, React e outras tecnologias ao projeto.
+Conforme meus conhecimentos avançarem, pretendo adicionar persistência de dados, integração com APIs, banco de dados e autenticação. TypeScript e React também poderão ser incorporados gradualmente, acompanhando minha evolução para o desenvolvimento full stack.
 
 ## Funcionalidades atuais
 
