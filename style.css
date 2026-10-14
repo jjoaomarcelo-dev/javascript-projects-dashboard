@@ -218,7 +218,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-
     font-size: 0.875rem;
 }
 
-.registro-card p:last-child {
+.registro-status {
     width: fit-content;
     margin-top: 12px;
     padding: 3px 9px;
@@ -227,6 +227,27 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-
     color: var(--texto);
     font-size: 0.75rem;
     font-weight: 700;
+}
+
+.botao-remover {
+    margin-top: 16px;
+    padding: 8px 12px;
+    border: 1px solid #d8a09b;
+    border-radius: 6px;
+    background: transparent;
+    color: #b42318;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.botao-remover:hover {
+    border-color: #b42318;
+    background: #fef3f2;
+}
+
+.botao-remover:active {
+    background: #fee4e2;
 }
 
 .estado-vazio {

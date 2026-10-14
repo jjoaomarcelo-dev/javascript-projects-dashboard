@@ -90,7 +90,16 @@ const limparCampos = () => {
 const exibirRegistros = () => {
     listaRegistros.innerHTML = ""
 
-    registros.forEach((registro) => {
+    if (registros.length === 0) {
+        listaRegistros.innerHTML = `
+        <div class="estado-vazio">
+            <strong>Nenhum exercício ou projeto registrado ainda.</strong>
+        </div>
+    `
+        return
+    }
+
+    registros.forEach((registro, indice) => {
 
         const dataFormatada = registro.data
             .split("-")
@@ -129,8 +138,25 @@ const exibirRegistros = () => {
         registroCard.append(registroDescricao)
 
         const registroStatus = document.createElement("p")
+        registroStatus.classList.add("registro-status")
         registroStatus.textContent = `Status: ${statusFormatado}`
         registroCard.append(registroStatus)
+
+        const botaoRemover = document.createElement("button")
+        botaoRemover.type = "button"
+        botaoRemover.textContent = "Remover"
+        botaoRemover.classList.add("botao-remover")
+        registroCard.append(botaoRemover)
+
+        botaoRemover.addEventListener("click", () => {
+            const confirmarRemocao = confirm("Tem certeza que deseja remover este registro?")
+            if (!confirmarRemocao) {
+                return
+            }
+            registros.splice(indice, 1)
+            salvarRegistros()
+            exibirRegistros()
+        })
 
         listaRegistros.append(registroCard)
     })
