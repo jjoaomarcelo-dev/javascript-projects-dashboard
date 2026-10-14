@@ -16,7 +16,12 @@ const erroDescricao = document.querySelector("#erroDescricao")
 const btnAdicionar = document.querySelector("#btnAdicionar")
 const listaRegistros = document.querySelector("#listaRegistros")
 
-const registros = []
+let registros = []
+const registrosSalvos = localStorage.getItem("registros")
+if (registrosSalvos !== null) {
+    const registrosConvertidos = JSON.parse(registrosSalvos)
+    registros = registrosConvertidos
+}
 
 const validarCampos = () => {
     let camposValidos = true
@@ -73,6 +78,15 @@ const formatarTexto = (texto) => {
         .join(" ")
 }
 
+const limparCampos = () => {
+    f_titulo.value = ""
+    f_categoria.value = ""
+    f_tema.value = ""
+    f_data.value = ""
+    f_status.value = "concluido"
+    f_descricao.value = ""
+}
+
 const exibirRegistros = () => {
     listaRegistros.innerHTML = ""
 
@@ -122,13 +136,9 @@ const exibirRegistros = () => {
     })
 }
 
-const limparCampos = () => {
-    f_titulo.value = ""
-    f_categoria.value = ""
-    f_tema.value = ""
-    f_data.value = ""
-    f_status.value = "concluido"
-    f_descricao.value = ""
+const salvarRegistros = () => {
+    const registrosEmTexto = JSON.stringify(registros)
+    localStorage.setItem("registros", registrosEmTexto)
 }
 
 btnAdicionar.addEventListener("click", () => {
@@ -151,6 +161,11 @@ btnAdicionar.addEventListener("click", () => {
     }
 
     registros.push(registro)
+    salvarRegistros()
     exibirRegistros()
     limparCampos()
 })
+
+if (registros.length > 0) {
+    exibirRegistros()
+}

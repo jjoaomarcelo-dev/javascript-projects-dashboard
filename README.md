@@ -32,7 +32,7 @@ Conforme meus conhecimentos avançarem, pretendo adicionar persistência de dado
 
 ### Primeira versão
 
-- [ ] Armazenamento com localStorage
+- [x] Armazenamento com localStorage
 - [ ] Edição e remoção de registros
 - [ ] Resumo de exercícios e projetos
 - [ ] Filtros por categoria e status
