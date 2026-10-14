@@ -14,9 +14,12 @@ const erroData = document.querySelector("#erroData")
 const erroDescricao = document.querySelector("#erroDescricao")
 
 const btnAdicionar = document.querySelector("#btnAdicionar")
+const btnCancelar = document.querySelector("#btnCancelar")
 const listaRegistros = document.querySelector("#listaRegistros")
 
 let registros = []
+let indiceEdicao = null
+
 const registrosSalvos = localStorage.getItem("registros")
 if (registrosSalvos !== null) {
     const registrosConvertidos = JSON.parse(registrosSalvos)
@@ -142,6 +145,28 @@ const exibirRegistros = () => {
         registroStatus.textContent = `Status: ${statusFormatado}`
         registroCard.append(registroStatus)
 
+        const botaoEditar = document.createElement("button")
+        botaoEditar.type = "button"
+        botaoEditar.textContent = "Editar"
+        botaoEditar.classList.add("botao-editar")
+        registroCard.append(botaoEditar)
+
+        botaoEditar.addEventListener("click", () => {
+            indiceEdicao = indice
+            btnCancelar.hidden = false
+            btnAdicionar.textContent = "Salvar alterações"
+
+            f_titulo.value = registro.titulo
+            f_categoria.value = registro.categoria
+            f_tema.value = registro.tema
+            f_data.value = registro.data
+            f_status.value = registro.status
+            f_descricao.value = registro.descricao
+
+            f_titulo.focus()
+
+        })
+
         const botaoRemover = document.createElement("button")
         botaoRemover.type = "button"
         botaoRemover.textContent = "Remover"
@@ -154,6 +179,11 @@ const exibirRegistros = () => {
                 return
             }
             registros.splice(indice, 1)
+            indiceEdicao = null
+            btnCancelar.hidden = true
+            btnAdicionar.textContent = "Adicionar exercício ou projeto"
+            limparCampos()
+
             salvarRegistros()
             exibirRegistros()
         })
@@ -166,6 +196,13 @@ const salvarRegistros = () => {
     const registrosEmTexto = JSON.stringify(registros)
     localStorage.setItem("registros", registrosEmTexto)
 }
+
+btnCancelar.addEventListener("click", () => {
+    btnCancelar.hidden = true
+    btnAdicionar.textContent = "Adicionar exercício ou projeto"
+    limparCampos()
+    indiceEdicao = null
+})
 
 btnAdicionar.addEventListener("click", () => {
     const camposValidos = validarCampos()
@@ -186,10 +223,24 @@ btnAdicionar.addEventListener("click", () => {
         descricao: f_descricao.value.trim()
     }
 
-    registros.push(registro)
+    if (indiceEdicao === null) {
+        registros.push(registro)
+    } else {
+        registros[indiceEdicao] = registro
+    }
+
+    indiceEdicao = null
+    btnCancelar.hidden = true
+    btnAdicionar.textContent = "Adicionar exercício ou projeto"
+
     salvarRegistros()
     exibirRegistros()
     limparCampos()
+
+    listaRegistros.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    })
 })
 
 if (registros.length > 0) {

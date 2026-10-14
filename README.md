@@ -33,7 +33,7 @@ Conforme meus conhecimentos avançarem, pretendo adicionar persistência de dado
 ### Primeira versão
 
 - [x] Armazenamento com localStorage
-- [ ] Edição e remoção de registros
+- [x] Edição e remoção de registros
 - [ ] Resumo de exercícios e projetos
 - [ ] Filtros por categoria e status
 - [ ] Busca por título ou tema
@@ -70,4 +70,4 @@ javascript-projects-dashboard/
 
 ## Status
 
-O cadastro, a validação e a listagem já estão funcionando. O próximo passo será implementar o localStorage para manter os registros salvos no navegador.
+O cadastro, a validação, a listagem e o armazenamento com localStorage já estão funcionando. Os registros também podem ser editados e removidos. O próximo passo será criar um resumo dos exercícios e projetos cadastrados.

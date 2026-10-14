@@ -24,27 +24,29 @@ body {
     line-height: 1.6;
 }
 
-/* Duas colunas no computador; uma coluna no celular. */
+/* Conteúdo organizado em uma única coluna. */
 .cartao {
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     align-items: start;
-    gap: 28px;
+    gap: 32px;
     width: min(1120px, calc(100% - 64px));
-    margin: 56px auto;
+    margin: 48px auto 64px;
 }
 
 header {
-    grid-column: 1 / -1;
-    padding: 0 0 28px;
-    border-bottom: 1px solid var(--borda);
+    width: min(760px, 100%);
+    justify-self: center;
+    padding: 8px 0 12px;
+    text-align: center;
 }
 
 .marca {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    margin: 0 0 24px;
+    justify-content: center;
+    margin: 0 0 18px;
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -68,7 +70,7 @@ h1, h2, p {
 }
 
 h1 {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     font-size: clamp(1.8rem, 4vw, 2.8rem);
     line-height: 1.15;
     letter-spacing: -0.045em;
@@ -76,7 +78,8 @@ h1 {
 }
 
 header > p:last-child {
-    margin-bottom: 0;
+    max-width: 620px;
+    margin: 0 auto;
     color: var(--texto-suave);
 }
 
@@ -92,19 +95,28 @@ h2 {
     border: 1px solid var(--borda);
     border-radius: var(--raio);
     background: var(--superficie);
+    box-shadow: 0 10px 30px rgba(37, 41, 35, 0.06);
 }
 
 .formulario {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
+    width: min(760px, 100%);
+    justify-self: center;
 }
 
 .cabecalho-secao,
 .campo-titulo,
 .campo-descricao,
-#btnAdicionar {
+.acoes-formulario {
     grid-column: 1 / -1;
+}
+
+.acoes-formulario {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
 }
 
 .descricao-secao {
@@ -166,8 +178,8 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-
 }
 
 #btnAdicionar {
+    flex: 1;
     min-height: 48px;
-    margin-top: 4px;
     padding: 12px 20px;
     border: 1px solid #d5b430;
     border-radius: 6px;
@@ -185,20 +197,46 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-
     background: #d9b52e;
 }
 
+#btnCancelar {
+    min-height: 48px;
+    padding: 12px 20px;
+    border: 1px solid #aeb3aa;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--texto-suave);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#btnCancelar:hover {
+    border-color: #747b70;
+    background: #f3f4f0;
+    color: var(--texto);
+}
+
+#btnCancelar:active {
+    background: #e8eae4;
+}
+
 .resultado .cabecalho-secao {
     padding-bottom: 24px;
     border-bottom: 1px solid var(--borda);
 }
 
+.resultado {
+    padding: 32px;
+}
+
 .res {
     display: grid;
-    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
     margin-top: 24px;
     overflow-wrap: anywhere;
 }
 
 .registro-card {
-    padding: 18px;
+    padding: 20px;
     border: 1px solid var(--borda);
     border-left: 4px solid var(--destaque);
     border-radius: 8px;
@@ -229,16 +267,35 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-
     font-weight: 700;
 }
 
+.botao-editar,
 .botao-remover {
     margin-top: 16px;
     padding: 8px 12px;
-    border: 1px solid #d8a09b;
     border-radius: 6px;
     background: transparent;
-    color: #b42318;
     font-size: 0.8125rem;
     font-weight: 600;
     cursor: pointer;
+}
+
+.botao-editar {
+    margin-right: 8px;
+    border: 1px solid #9aaa93;
+    color: var(--foco);
+}
+
+.botao-editar:hover {
+    border-color: var(--foco);
+    background: #f0f4ed;
+}
+
+.botao-editar:active {
+    background: #e4ebe0;
+}
+
+.botao-remover {
+    border: 1px solid #d8a09b;
+    color: #b42318;
 }
 
 .botao-remover:hover {
@@ -251,6 +308,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-
 }
 
 .estado-vazio {
+    grid-column: 1 / -1;
     padding: 40px 16px;
     border: 1px dashed var(--borda);
     border-radius: 8px;
@@ -273,10 +331,9 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-
 
 @media (max-width: 800px) {
     .cartao {
-        grid-template-columns: minmax(0, 1fr);
         width: calc(100% - 40px);
-        margin: 32px auto;
-        gap: 20px;
+        margin: 32px auto 48px;
+        gap: 24px;
     }
 }
 
@@ -293,5 +350,9 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-
     .formulario {
         grid-template-columns: minmax(0, 1fr);
         gap: 18px;
+    }
+
+    .acoes-formulario {
+        flex-direction: column;
     }
 }
