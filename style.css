@@ -89,13 +89,48 @@ h2 {
     letter-spacing: -0.025em;
 }
 
-.formulario, .resultado {
+.resumo, .formulario, .resultado {
     min-width: 0;
     padding: 28px;
     border: 1px solid var(--borda);
     border-radius: var(--raio);
     background: var(--superficie);
     box-shadow: 0 10px 30px rgba(37, 41, 35, 0.06);
+}
+
+.resumo {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.cabecalho-resumo {
+    grid-column: 1 / -1;
+    margin-bottom: 4px;
+}
+
+.resumo-card {
+    padding: 18px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    background: #fafbf8;
+}
+
+.resumo-card strong,
+.resumo-card span {
+    display: block;
+}
+
+.resumo-card strong {
+    color: var(--texto);
+    font-size: 1.75rem;
+    line-height: 1.2;
+}
+
+.resumo-card span {
+    margin-top: 5px;
+    color: var(--texto-suave);
+    font-size: 0.8125rem;
 }
 
 .formulario {
@@ -335,6 +370,10 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-
         margin: 32px auto 48px;
         gap: 24px;
     }
+
+    .resumo {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 480px) {
@@ -343,7 +382,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-
         margin: 24px auto;
     }
 
-    .formulario, .resultado {
+    .resumo, .formulario, .resultado {
         padding: 20px;
     }
 
@@ -354,5 +393,9 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-
 
     .acoes-formulario {
         flex-direction: column;
+    }
+
+    .resumo {
+        grid-template-columns: minmax(0, 1fr);
     }
 }

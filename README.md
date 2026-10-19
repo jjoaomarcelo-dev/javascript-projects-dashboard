@@ -34,7 +34,7 @@ Conforme meus conhecimentos avançarem, pretendo adicionar persistência de dado
 
 - [x] Armazenamento com localStorage
 - [x] Edição e remoção de registros
-- [ ] Resumo de exercícios e projetos
+- [x] Resumo de exercícios e projetos
 - [ ] Filtros por categoria e status
 - [ ] Busca por título ou tema
 - [ ] Links para visualizar o código

@@ -13,9 +13,17 @@ const erroTema = document.querySelector("#erroTema")
 const erroData = document.querySelector("#erroData")
 const erroDescricao = document.querySelector("#erroDescricao")
 
+// Controle
 const btnAdicionar = document.querySelector("#btnAdicionar")
 const btnCancelar = document.querySelector("#btnCancelar")
 const listaRegistros = document.querySelector("#listaRegistros")
+
+// Resumo
+const totalRegistros = document.querySelector("#totalRegistros")
+const totalExercicios = document.querySelector("#totalExercicios")
+const totalProjetos = document.querySelector("#totalProjetos")
+const totalConcluidos = document.querySelector("#totalConcluidos")
+const totalEmDesenvolvimento = document.querySelector("#totalEmDesenvolvimento")
 
 let registros = []
 let indiceEdicao = null
@@ -90,8 +98,25 @@ const limparCampos = () => {
     f_descricao.value = ""
 }
 
+const atualizarResumo = () => {
+    totalRegistros.textContent = registros.length
+
+    const qntExercicios = registros.filter(registro => registro.categoria === "exercicio")
+    totalExercicios.textContent = qntExercicios.length
+
+    const qntProjetos = registros.filter(registro => registro.categoria === "projeto")
+    totalProjetos.textContent = qntProjetos.length
+
+    const qntConcluido = registros.filter(registro => registro.status === "concluido")
+    totalConcluidos.textContent = qntConcluido.length
+
+    const qntEmDesenvolvimento = registros.filter(registro => registro.status === "em-desenvolvimento")
+    totalEmDesenvolvimento.textContent = qntEmDesenvolvimento.length
+}
+
 const exibirRegistros = () => {
     listaRegistros.innerHTML = ""
+    atualizarResumo()
 
     if (registros.length === 0) {
         listaRegistros.innerHTML = `
