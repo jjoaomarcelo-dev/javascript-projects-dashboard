@@ -12,44 +12,34 @@ Estou desenvolvendo esse dashboard para organizar os exercícios e projetos que 
 - CSS3
 - JavaScript puro, sem bibliotecas ou frameworks
 
-## Objetivo de aprendizado
-
-Estou desenvolvendo este projeto por etapas, acompanhando minha evolução nos estudos de JavaScript. Cada funcionalidade é implementada para aplicar conceitos na prática, compreender a lógica envolvida e desenvolver autonomia na resolução de problemas.
-
-Nesta etapa, meu foco está nos fundamentos da linguagem, como funções, arrays, objetos, eventos, validação de formulários e manipulação do DOM. Conforme o projeto evoluir, o dashboard reunirá exercícios e projetos que já desenvolvi e que continuarei desenvolvendo durante meus estudos, com acesso ao código e à execução pelo navegador.
-
-Conforme meus conhecimentos avançarem, pretendo adicionar persistência de dados, integração com APIs, banco de dados e autenticação. TypeScript e React também poderão ser incorporados gradualmente, acompanhando minha evolução para o desenvolvimento full stack.
-
 ## Funcionalidades atuais
 
-- [x] Estrutura inicial do painel
-- [x] Layout responsivo
-- [x] Formulário para exercícios e projetos
-- [x] Leitura e validação dos campos
-- [x] Cadastro e listagem de exercícios e projetos
+- Cadastro e listagem de exercícios e projetos.
+- Validação dos campos do formulário.
+- Edição e exclusão de registros.
+- Persistência dos registros com localStorage.
+- Resumo com totais por categoria e status.
+- Layout responsivo.
+
+## Conceitos aplicados
+
+Funções, arrays, objetos, eventos, manipulação do DOM, validação de formulários e conversão de dados com JSON. O projeto é desenvolvido por etapas para aplicar os conteúdos dos meus estudos em funcionalidades completas.
+
+## Armazenamento dos dados
+
+Os registros ficam armazenados no navegador com localStorage. Não há sincronização entre dispositivos ou visitantes. A limpeza dos dados do site pode remover os registros.
 
 ## Próximas etapas
 
-### Primeira versão
-
-- [x] Armazenamento com localStorage
-- [x] Edição e remoção de registros
-- [x] Resumo de exercícios e projetos
 - [ ] Filtros por categoria e status
 - [ ] Busca por título ou tema
-- [ ] Links para visualizar o código
+- [ ] Links para visualizar o código dos exercícios e projetos
 - [ ] Links para executar exercícios e projetos no navegador
 - [ ] Publicação do dashboard
 
-### Evolução full stack
+### Evolução planejada
 
-- [ ] Criar uma API para gerenciar os registros
-- [ ] Armazenar os dados em banco de dados
-- [ ] Adicionar autenticação para proteger o cadastro e a edição
-- [ ] Disponibilizar os mesmos registros para todos os visitantes
-- [ ] Migrar gradualmente o projeto para TypeScript e React
-
-As funcionalidades serão desenvolvidas aos poucos, acompanhando os conteúdos que estudo. A primeira versão continuará usando apenas HTML, CSS e JavaScript.
+Integração com API, banco de dados e autenticação, além da incorporação gradual de TypeScript e React. Esses recursos ainda não fazem parte da versão atual.
 
 ## Como executar
 
@@ -70,4 +60,4 @@ javascript-projects-dashboard/
 
 ## Status
 
-O cadastro, a validação, a listagem e o armazenamento com localStorage já estão funcionando. Os registros também podem ser editados e removidos. O próximo passo será criar um resumo dos exercícios e projetos cadastrados.
+Em desenvolvimento. A versão atual implementa um CRUD local com validação, persistência e resumo dos registros. As próximas entregas estão listadas acima.
