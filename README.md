@@ -18,7 +18,7 @@ Estou desenvolvendo este projeto por etapas, acompanhando minha evolução nos e
 
 Nesta etapa, meu foco está nos fundamentos da linguagem, como funções, arrays, objetos, eventos, validação de formulários e manipulação do DOM. Conforme o projeto evoluir, o dashboard reunirá exercícios e projetos que já desenvolvi e que continuarei desenvolvendo durante meus estudos, com acesso ao código e à execução pelo navegador.
 
-Conforme meus conhecimentos avançarem, pretendo adicionar persistência de dados, integração com APIs, banco de dados e autenticação. TypeScript e React também poderão ser incorporados gradualmente, acompanhando minha evolução para o desenvolvimento full stack.
+Conforme meus conhecimentos avançarem, pretendo adicionar persistência em banco de dados, integração com APIs e autenticação. TypeScript e React também poderão ser incorporados gradualmente, acompanhando minha evolução para o desenvolvimento full stack.
 
 ## Funcionalidades atuais
 
@@ -27,14 +27,14 @@ Conforme meus conhecimentos avançarem, pretendo adicionar persistência de dado
 - [x] Formulário para exercícios e projetos
 - [x] Leitura e validação dos campos
 - [x] Cadastro e listagem de exercícios e projetos
+- [x] Armazenamento com localStorage
+- [x] Edição e remoção de registros
+- [x] Resumo de exercícios e projetos
 
 ## Próximas etapas
 
 ### Primeira versão
 
-- [x] Armazenamento com localStorage
-- [x] Edição e remoção de registros
-- [x] Resumo de exercícios e projetos
 - [ ] Filtros por categoria e status
 - [ ] Busca por título ou tema
 - [ ] Links para visualizar o código
@@ -70,4 +70,4 @@ javascript-projects-dashboard/
 
 ## Status
 
-O cadastro, a validação, a listagem e o armazenamento com localStorage já estão funcionando. Os registros também podem ser editados e removidos. O próximo passo será criar um resumo dos exercícios e projetos cadastrados.
+O projeto está em desenvolvimento. Já permite cadastrar, listar, editar e excluir registros, com validação dos campos, armazenamento com localStorage e resumo por categoria e status. Os próximos passos incluem filtros, busca e links para visualizar o código e executar os exercícios no navegador.
