@@ -18,8 +18,11 @@
 
         <section class="resumo" aria-labelledby="titulo-resumo">
             <div class="cabecalho-resumo">
-                <h2 id="titulo-resumo">Resumo</h2>
-                <p class="descricao-secao">Visão geral dos registros cadastrados.</p>
+                <div>
+                    <h2 id="titulo-resumo">Resumo</h2>
+                    <p class="descricao-secao">Visão geral dos registros cadastrados.</p>
+                </div>
+                <button type="button" id="btnGerenciar">Gerenciar registros</button>
             </div>
 
             <article class="resumo-card">
@@ -46,62 +49,68 @@
                 <strong id="totalEmDesenvolvimento">0</strong>
                 <span>Em desenvolvimento</span>
             </article>
+
         </section>
 
-        <section class="formulario" aria-labelledby="titulo-formulario">
-            <div class="cabecalho-secao">
-                <h2 id="titulo-formulario">Adicionar exercício ou projeto</h2>
-                <p class="descricao-secao">Registro dos exercícios e projetos que desenvolvo em JavaScript.</p>
-            </div>
+        <dialog class="modal-gerenciamento" id="formularioGerenciamento" aria-labelledby="titulo-formulario">
+            <section class="formulario">
+                <div class="cabecalho-secao cabecalho-gerenciamento">
+                    <div>
+                        <h2 id="titulo-formulario">Adicionar exercício ou projeto</h2>
+                        <p class="descricao-secao">Registro dos exercícios e projetos que desenvolvo em JavaScript.</p>
+                    </div>
+                    <button type="button" id="btnFecharGerenciamento" aria-label="Fechar gerenciamento">×</button>
+                </div>
 
-            <div class="campoForm campo-titulo">
-                <label for="f_titulo">Título</label>
-                <input type="text" name="titulo" id="f_titulo" placeholder="Ex.: Lista de presença">
-                <span id="erroTitulo" aria-live="polite"></span>
-            </div>
+                <div class="campoForm campo-titulo">
+                    <label for="f_titulo">Título</label>
+                    <input type="text" name="titulo" id="f_titulo" placeholder="Ex.: Lista de presença">
+                    <span id="erroTitulo" aria-live="polite"></span>
+                </div>
 
-            <div class="campoForm">
-                <label for="f_categoria">Categoria</label>
-                <select name="categoria" id="f_categoria">
-                    <option value="">Selecione a categoria</option>
-                    <option value="exercicio">Exercício</option>
-                    <option value="projeto">Projeto</option>
-                </select>
-                <span id="erroCategoria" aria-live="polite"></span>
-            </div>
+                <div class="campoForm">
+                    <label for="f_categoria">Categoria</label>
+                    <select name="categoria" id="f_categoria">
+                        <option value="">Selecione a categoria</option>
+                        <option value="exercicio">Exercício</option>
+                        <option value="projeto">Projeto</option>
+                    </select>
+                    <span id="erroCategoria" aria-live="polite"></span>
+                </div>
 
-            <div class="campoForm">
-                <label for="f_tema">Tema principal</label>
-                <input type="text" name="tema" id="f_tema" placeholder="Ex.: Arrays e objetos">
-                <span id="erroTema" aria-live="polite"></span>
-            </div>
+                <div class="campoForm">
+                    <label for="f_tema">Tema principal</label>
+                    <input type="text" name="tema" id="f_tema" placeholder="Ex.: Arrays e objetos">
+                    <span id="erroTema" aria-live="polite"></span>
+                </div>
 
-            <div class="campoForm">
-                <label for="f_data">Data</label>
-                <input type="date" name="data" id="f_data" min="1900-01-01" max="2099-12-31">
-                <span id="erroData" aria-live="polite"></span>
-            </div>
+                <div class="campoForm">
+                    <label for="f_data">Data</label>
+                    <input type="date" name="data" id="f_data" min="1900-01-01" max="2099-12-31">
+                    <span id="erroData" aria-live="polite"></span>
+                </div>
 
-            <div class="campoForm">
-                <label for="f_status">Status</label>
-                <select name="status" id="f_status">
-                    <option value="em-desenvolvimento">Em desenvolvimento</option>
-                    <option value="concluido" selected>Concluído</option>
-                </select>
-            </div>
+                <div class="campoForm">
+                    <label for="f_status">Status</label>
+                    <select name="status" id="f_status">
+                        <option value="em-desenvolvimento">Em desenvolvimento</option>
+                        <option value="concluido" selected>Concluído</option>
+                    </select>
+                </div>
 
-            <div class="campoForm campo-descricao">
-                <label for="f_descricao">Descrição</label>
-                <textarea name="descricao" id="f_descricao" rows="4"
-                    placeholder="Descreva brevemente o que foi desenvolvido."></textarea>
-                <span id="erroDescricao" aria-live="polite"></span>
-            </div>
+                <div class="campoForm campo-descricao">
+                    <label for="f_descricao">Descrição</label>
+                    <textarea name="descricao" id="f_descricao" rows="4"
+                        placeholder="Descreva brevemente o que foi desenvolvido."></textarea>
+                    <span id="erroDescricao" aria-live="polite"></span>
+                </div>
 
-            <div class="acoes-formulario">
-                <button type="button" id="btnAdicionar">Adicionar exercício ou projeto</button>
-                <button type="button" id="btnCancelar" hidden>Cancelar</button>
-            </div>
-        </section>
+                <div class="acoes-formulario">
+                    <button type="button" id="btnAdicionar">Adicionar exercício ou projeto</button>
+                    <button type="button" id="btnCancelar" hidden>Cancelar</button>
+                </div>
+            </section>
+        </dialog>
 
         <section class="resultado" aria-live="polite" aria-labelledby="titulo-resultado">
             <div class="cabecalho-secao">

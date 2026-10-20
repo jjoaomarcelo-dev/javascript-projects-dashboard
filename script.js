@@ -17,6 +17,9 @@ const erroDescricao = document.querySelector("#erroDescricao")
 const btnAdicionar = document.querySelector("#btnAdicionar")
 const btnCancelar = document.querySelector("#btnCancelar")
 const listaRegistros = document.querySelector("#listaRegistros")
+const btnGerenciar = document.querySelector("#btnGerenciar")
+const formularioGerenciamento = document.querySelector("#formularioGerenciamento")
+const btnFecharGerenciamento = document.querySelector("#btnFecharGerenciamento")
 
 // Resumo
 const totalRegistros = document.querySelector("#totalRegistros")
@@ -26,8 +29,11 @@ const totalConcluidos = document.querySelector("#totalConcluidos")
 const totalEmDesenvolvimento = document.querySelector("#totalEmDesenvolvimento")
 
 let registros = []
+
+// Fica com a posição do registro enquanto ele está sendo editado.
 let indiceEdicao = null
 
+// Carrega os registros salvos ao abrir ou atualizar a página.
 const registrosSalvos = localStorage.getItem("registros")
 if (registrosSalvos !== null) {
     const registrosConvertidos = JSON.parse(registrosSalvos)
@@ -178,6 +184,7 @@ const exibirRegistros = () => {
 
         botaoEditar.addEventListener("click", () => {
             indiceEdicao = indice
+            formularioGerenciamento.showModal()
             btnCancelar.hidden = false
             btnAdicionar.textContent = "Salvar alterações"
 
@@ -218,15 +225,33 @@ const exibirRegistros = () => {
 }
 
 const salvarRegistros = () => {
+    // O localStorage só guarda texto.
     const registrosEmTexto = JSON.stringify(registros)
     localStorage.setItem("registros", registrosEmTexto)
 }
 
-btnCancelar.addEventListener("click", () => {
+const cancelarGerenciamento = () => {
     btnCancelar.hidden = true
     btnAdicionar.textContent = "Adicionar exercício ou projeto"
     limparCampos()
     indiceEdicao = null
+    formularioGerenciamento.close()
+}
+
+btnGerenciar.addEventListener("click", () => {
+    formularioGerenciamento.showModal()
+})
+
+btnFecharGerenciamento.addEventListener("click", () => {
+    cancelarGerenciamento()
+})
+
+btnCancelar.addEventListener("click", () => {
+    cancelarGerenciamento()
+})
+
+formularioGerenciamento.addEventListener("cancel", () => {
+    cancelarGerenciamento()
 })
 
 btnAdicionar.addEventListener("click", () => {
@@ -261,6 +286,7 @@ btnAdicionar.addEventListener("click", () => {
     salvarRegistros()
     exibirRegistros()
     limparCampos()
+    formularioGerenciamento.close()
 
     listaRegistros.scrollIntoView({
         behavior: "smooth",
