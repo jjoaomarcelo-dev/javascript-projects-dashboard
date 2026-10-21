@@ -99,6 +99,16 @@ const formatarTexto = (texto) => {
         .join(" ")
 }
 
+const criarDetalheRegistro = (rotulo, valor) => {
+    const paragrafo = document.createElement("p")
+    const rotuloDestacado = document.createElement("strong")
+
+    rotuloDestacado.textContent = `${rotulo}: `
+    paragrafo.append(rotuloDestacado, document.createTextNode(valor))
+
+    return paragrafo
+}
+
 const limparCampos = () => {
     f_titulo.value = ""
     f_categoria.value = ""
@@ -170,36 +180,44 @@ const exibirRegistros = () => {
         const registroCard = document.createElement("div")
         registroCard.classList.add("registro-card")
 
+        const cabecalhoRegistro = document.createElement("div")
+        cabecalhoRegistro.classList.add("cabecalho-registro")
+
         const registroTitulo = document.createElement("h3")
         registroTitulo.textContent = registro.titulo
-        registroCard.append(registroTitulo)
-
-        const registroCategoria = document.createElement("p")
-        registroCategoria.textContent = `Categoria: ${categoriaFormatada}`
-        registroCard.append(registroCategoria)
-
-        const registroTema = document.createElement("p")
-        registroTema.textContent = `Tema principal: ${registro.tema}`
-        registroCard.append(registroTema)
-
-        const registroData = document.createElement("p")
-        registroData.textContent = `Data: ${dataFormatada}`
-        registroCard.append(registroData)
-
-        const registroDescricao = document.createElement("p")
-        registroDescricao.textContent = `Descrição: ${registro.descricao}`
-        registroCard.append(registroDescricao)
 
         const registroStatus = document.createElement("p")
         registroStatus.classList.add("registro-status")
-        registroStatus.textContent = `Status: ${statusFormatado}`
-        registroCard.append(registroStatus)
+        registroStatus.classList.add(
+            registro.status === "concluido"
+                ? "registro-status-concluido"
+                : "registro-status-desenvolvimento"
+        )
+        registroStatus.textContent = statusFormatado
+
+        cabecalhoRegistro.append(registroTitulo, registroStatus)
+        registroCard.append(cabecalhoRegistro)
+
+        const registroCategoria = criarDetalheRegistro("Categoria", categoriaFormatada)
+        registroCard.append(registroCategoria)
+
+        const registroTema = criarDetalheRegistro("Tema principal", registro.tema)
+        registroCard.append(registroTema)
+
+        const registroData = criarDetalheRegistro("Data", dataFormatada)
+        registroCard.append(registroData)
+
+        const registroDescricao = criarDetalheRegistro("Descrição", registro.descricao)
+        registroCard.append(registroDescricao)
+
+        const acoesRegistro = document.createElement("div")
+        acoesRegistro.classList.add("acoes-registro")
 
         const botaoEditar = document.createElement("button")
         botaoEditar.type = "button"
         botaoEditar.textContent = "Editar"
         botaoEditar.classList.add("botao-editar")
-        registroCard.append(botaoEditar)
+        acoesRegistro.append(botaoEditar)
 
         botaoEditar.addEventListener("click", () => {
             indiceEdicao = indiceOriginal
@@ -222,7 +240,7 @@ const exibirRegistros = () => {
         botaoRemover.type = "button"
         botaoRemover.textContent = "Remover"
         botaoRemover.classList.add("botao-remover")
-        registroCard.append(botaoRemover)
+        acoesRegistro.append(botaoRemover)
 
         botaoRemover.addEventListener("click", () => {
             const confirmarRemocao = confirm("Tem certeza que deseja remover este registro?")
@@ -239,6 +257,7 @@ const exibirRegistros = () => {
             exibirRegistros()
         })
 
+        registroCard.append(acoesRegistro)
         listaRegistros.append(registroCard)
     })
 
@@ -321,7 +340,6 @@ filtroCategoria.addEventListener("change", () => {
 filtroStatus.addEventListener("change", () => {
     exibirRegistros()
 })
-
 
 if (registros.length > 0) {
     exibirRegistros()
