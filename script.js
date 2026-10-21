@@ -28,6 +28,10 @@ const totalProjetos = document.querySelector("#totalProjetos")
 const totalConcluidos = document.querySelector("#totalConcluidos")
 const totalEmDesenvolvimento = document.querySelector("#totalEmDesenvolvimento")
 
+// Filtros
+const filtroCategoria = document.querySelector("#filtroCategoria")
+const filtroStatus = document.querySelector("#filtroStatus")
+
 let registros = []
 
 // Fica com a posição do registro enquanto ele está sendo editado.
@@ -124,7 +128,19 @@ const exibirRegistros = () => {
     listaRegistros.innerHTML = ""
     atualizarResumo()
 
-    if (registros.length === 0) {
+    const categoriaSelecionada = filtroCategoria.value
+    const statusSelecionado = filtroStatus.value
+    let registrosFiltrados = registros
+
+    if (categoriaSelecionada !== "todos") {
+        registrosFiltrados = registrosFiltrados.filter(registro => registro.categoria === categoriaSelecionada)
+    }
+
+    if (statusSelecionado !== "todos") {
+        registrosFiltrados = registrosFiltrados.filter(registro => registro.status === statusSelecionado)
+    }
+
+    if (registrosFiltrados.length === 0) {
         listaRegistros.innerHTML = `
         <div class="estado-vazio">
             <strong>Nenhum exercício ou projeto registrado ainda.</strong>
@@ -133,7 +149,10 @@ const exibirRegistros = () => {
         return
     }
 
-    registros.forEach((registro, indice) => {
+    registrosFiltrados.forEach((registro) => {
+        // Acessa o vetor registros e retorna o índice do objeto que está sendo percorrido pelo forEach.
+        // A posição é a do vetor original, não a da lista filtrada. Se não encontrar o objeto, retorna -1.
+        const indiceOriginal = registros.indexOf(registro)
 
         const dataFormatada = registro.data
             .split("-")
@@ -183,7 +202,7 @@ const exibirRegistros = () => {
         registroCard.append(botaoEditar)
 
         botaoEditar.addEventListener("click", () => {
-            indiceEdicao = indice
+            indiceEdicao = indiceOriginal
             formularioGerenciamento.showModal()
             btnCancelar.hidden = false
             btnAdicionar.textContent = "Salvar alterações"
@@ -210,7 +229,7 @@ const exibirRegistros = () => {
             if (!confirmarRemocao) {
                 return
             }
-            registros.splice(indice, 1)
+            registros.splice(indiceOriginal, 1)
             indiceEdicao = null
             btnCancelar.hidden = true
             btnAdicionar.textContent = "Adicionar exercício ou projeto"
@@ -222,6 +241,7 @@ const exibirRegistros = () => {
 
         listaRegistros.append(registroCard)
     })
+
 }
 
 const salvarRegistros = () => {
@@ -293,6 +313,15 @@ btnAdicionar.addEventListener("click", () => {
         block: "start"
     })
 })
+
+filtroCategoria.addEventListener("change", () => {
+    exibirRegistros()
+})
+
+filtroStatus.addEventListener("change", () => {
+    exibirRegistros()
+})
+
 
 if (registros.length > 0) {
     exibirRegistros()

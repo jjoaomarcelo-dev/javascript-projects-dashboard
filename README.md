@@ -1,10 +1,14 @@
 # JavaScript Projects Dashboard
 
-Dashboard pessoal para registrar e apresentar os exercícios e projetos que desenvolvo em JavaScript.
+Dashboard desenvolvido para organizar minha prática em JavaScript durante a retomada ao desenvolvimento de software.
 
 ## Sobre o projeto
 
-Estou desenvolvendo esse dashboard para organizar os exercícios e projetos que faço durante meus estudos de JavaScript. A proposta é manter um histórico da minha evolução prática e, com o tempo, permitir o acesso ao código e à execução de cada exercício ou projeto pelo navegador.
+O JavaScript Projects Dashboard reúne exercícios e projetos em um painel com cadastro, edição, filtros e indicadores. Cada registro contém título, categoria, tema, data da prática, status e descrição.
+
+Sou formado em Sistemas de Informação, com uma base prévia de programação em JavaScript, Python e C++. Desenvolvi este projeto como parte da minha retomada ao desenvolvimento de software, aplicando essa base na construção de uma ferramenta para organizar minha prática.
+
+A proposta é reunir o trabalho realizado e facilitar sua consulta. Os próximos incrementos incluem busca e acesso ao código e à execução dos exercícios e projetos pelo navegador.
 
 ## Tecnologias
 
@@ -12,13 +16,20 @@ Estou desenvolvendo esse dashboard para organizar os exercícios e projetos que 
 - CSS3
 - JavaScript puro, sem bibliotecas ou frameworks
 
-## Objetivo de aprendizado
+## Prática de desenvolvimento
 
-Estou desenvolvendo este projeto por etapas, acompanhando minha evolução nos estudos de JavaScript. Cada funcionalidade é implementada para aplicar conceitos na prática, compreender a lógica envolvida e desenvolver autonomia na resolução de problemas.
+O desenvolvimento é incremental: cada funcionalidade parte de uma necessidade do painel e envolve definir o comportamento, implementar, verificar os resultados e revisar o código.
 
-Nesta etapa, meu foco está nos fundamentos da linguagem, como funções, arrays, objetos, eventos, validação de formulários e manipulação do DOM. Conforme o projeto evoluir, o dashboard reunirá exercícios e projetos que já desenvolvi e que continuarei desenvolvendo durante meus estudos, com acesso ao código e à execução pelo navegador.
+O projeto aplica funções, arrays, objetos, eventos, manipulação do DOM, validação de formulários e persistência local. Cadastro, edição, remoção e filtros permitem trabalhar a relação entre os dados e sua representação na interface.
 
-Conforme meus conhecimentos avançarem, pretendo adicionar persistência em banco de dados, integração com APIs e autenticação. TypeScript e React também poderão ser incorporados gradualmente, acompanhando minha evolução para o desenvolvimento full stack.
+Cada registro documenta a prática realizada, sua data e os conceitos envolvidos.
+
+## Decisões técnicas
+
+- **JavaScript puro:** implementação direta da lógica e da manipulação do DOM, sem bibliotecas ou frameworks.
+- **localStorage:** persistência dos registros no navegador, sem necessidade de servidor nesta versão.
+- **Filtros combinados:** categoria e status podem ser usados em conjunto; o resumo mantém os totais gerais dos registros.
+- **Renderização dos textos:** os campos dos registros são inseridos nos cards com `textContent`.
 
 ## Funcionalidades atuais
 
@@ -30,12 +41,14 @@ Conforme meus conhecimentos avançarem, pretendo adicionar persistência em banc
 - [x] Armazenamento com localStorage
 - [x] Edição e remoção de registros
 - [x] Resumo de exercícios e projetos
+- [x] Modal para cadastro e edição
+- [x] Filtros por categoria e status
 
 ## Próximas etapas
 
 ### Primeira versão
 
-- [ ] Filtros por categoria e status
+- [ ] Melhorar o tratamento de falhas e dados inválidos na persistência local
 - [ ] Busca por título ou tema
 - [ ] Links para visualizar o código
 - [ ] Links para executar exercícios e projetos no navegador
@@ -49,7 +62,7 @@ Conforme meus conhecimentos avançarem, pretendo adicionar persistência em banc
 - [ ] Disponibilizar os mesmos registros para todos os visitantes
 - [ ] Migrar gradualmente o projeto para TypeScript e React
 
-As funcionalidades serão desenvolvidas aos poucos, acompanhando os conteúdos que estudo. A primeira versão continuará usando apenas HTML, CSS e JavaScript.
+A prioridade é concluir e publicar a primeira versão com HTML, CSS e JavaScript. A evolução full stack será avaliada em etapas posteriores.
 
 ## Como executar
 
@@ -70,4 +83,10 @@ javascript-projects-dashboard/
 
 ## Status
 
-O projeto está em desenvolvimento. Já permite cadastrar, listar, editar e excluir registros, com validação dos campos, armazenamento com localStorage e resumo por categoria e status. Os próximos passos incluem filtros, busca e links para visualizar o código e executar os exercícios no navegador.
+Em desenvolvimento. O fluxo de cadastro, listagem, edição e remoção está implementado, assim como os filtros e o resumo. A publicação e os demais itens da primeira versão permanecem pendentes.
+
+Os dados ficam restritos ao navegador e à origem em que foram cadastrados; não há sincronização entre dispositivos nem uma lista compartilhada entre visitantes. O tratamento de falhas de armazenamento ainda precisa ser melhorado. O repositório ainda não possui uma suíte de testes automatizados.
+
+## Apoio de IA
+
+Utilizo IA como apoio para explicações, revisão de código e ajustes de interface.

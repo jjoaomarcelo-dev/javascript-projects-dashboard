@@ -11,18 +11,18 @@
 <body>
     <main class="cartao">
         <header>
-            <p class="marca"><span aria-hidden="true">JS</span> Meus projetos em JavaScript</p>
+            <p class="marca"><span aria-hidden="true">JS</span> Exercícios e projetos</p>
             <h1>JavaScript Projects Dashboard</h1>
-            <p>Exercícios e projetos desenvolvidos durante minha evolução em JavaScript.</p>
+            <p>Dashboard desenvolvido para organizar minha prática em JavaScript durante a retomada ao desenvolvimento
+                de software.</p>
         </header>
 
         <section class="resumo" aria-labelledby="titulo-resumo">
             <div class="cabecalho-resumo">
                 <div>
-                    <h2 id="titulo-resumo">Resumo</h2>
-                    <p class="descricao-secao">Visão geral dos registros cadastrados.</p>
+                    <h2 id="titulo-resumo">Visão geral</h2>
+                    <p class="descricao-secao">Resumo dos exercícios e projetos cadastrados.</p>
                 </div>
-                <button type="button" id="btnGerenciar">Gerenciar registros</button>
             </div>
 
             <article class="resumo-card">
@@ -49,6 +49,30 @@
                 <strong id="totalEmDesenvolvimento">0</strong>
                 <span>Em desenvolvimento</span>
             </article>
+
+            <div class="acoes-resumo">
+                <div class="painel-filtros" role="group" aria-labelledby="titulo-filtros">
+                    <h3 id="titulo-filtros">Filtrar</h3>
+                    <div class="campoForm">
+                        <label class="rotulo-filtro" for="filtroCategoria">Categoria</label>
+                        <select id="filtroCategoria">
+                            <option value="todos">Categoria: todas</option>
+                            <option value="exercicio">Categoria: exercícios</option>
+                            <option value="projeto">Categoria: projetos</option>
+                        </select>
+                    </div>
+
+                    <div class="campoForm">
+                        <label class="rotulo-filtro" for="filtroStatus">Status</label>
+                        <select id="filtroStatus">
+                            <option value="todos">Status: todos</option>
+                            <option value="concluido">Concluídos</option>
+                            <option value="em-desenvolvimento">Em desenvolvimento</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" id="btnGerenciar">Gerenciar registros</button>
+            </div>
 
         </section>
 
