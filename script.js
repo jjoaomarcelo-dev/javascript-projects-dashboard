@@ -38,11 +38,32 @@ let registros = []
 // Fica com a posição do registro enquanto ele está sendo editado.
 let indiceEdicao = null
 
+// Verifica se um dado carregado do localStorage possui a estrutura esperada para um registro.
+const registroValido = (registro) => {
+    const ehObjeto = typeof registro === "object" && registro !== null
+    if (!ehObjeto) {
+        return false
+    }
+    const tituloValido = typeof registro.titulo === "string"
+    const temaValido = typeof registro.tema === "string"
+    const dataValida = typeof registro.data === "string"
+    const descricaoValida = typeof registro.descricao === "string"
+    const categoriaValida = ["exercicio", "projeto"].includes(registro.categoria)
+    const statusValido = ["concluido", "em-desenvolvimento"].includes(registro.status)
+    return tituloValido && temaValido && dataValida && descricaoValida && categoriaValida && statusValido
+}
+
 // Carrega os registros salvos ao abrir ou atualizar a página.
 const registrosSalvos = localStorage.getItem("registros")
 if (registrosSalvos !== null) {
-    const registrosConvertidos = JSON.parse(registrosSalvos)
-    registros = registrosConvertidos
+    try {
+        const registrosConvertidos = JSON.parse(registrosSalvos)
+        if (Array.isArray(registrosConvertidos)) {
+            registros = registrosConvertidos.filter(registroValido)
+        }
+    } catch (erro) {
+        console.error("Erro, dados de registros inválidos.", erro)
+    }
 }
 
 const validarCampos = () => {
@@ -276,11 +297,15 @@ const exibirRegistros = () => {
     })
 
 }
-
+// Converte os registros em texto e tenta salvá-los no localStorage, tratando possíveis falhas.
 const salvarRegistros = () => {
-    // O localStorage só guarda texto.
-    const registrosEmTexto = JSON.stringify(registros)
-    localStorage.setItem("registros", registrosEmTexto)
+    try {
+        // O localStorage só guarda texto.
+        const registrosEmTexto = JSON.stringify(registros)
+        localStorage.setItem("registros", registrosEmTexto)
+    } catch (erro) {
+        console.error("Não foi possível salvar os registros.", erro)
+    }
 }
 
 const cancelarGerenciamento = () => {

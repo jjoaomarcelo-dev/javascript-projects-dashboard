@@ -4,9 +4,7 @@ Dashboard desenvolvido para organizar minha prática em JavaScript durante a ret
 
 ## Sobre o projeto
 
-O Dashboard reúne exercícios e projetos em um painel com cadastro, edição e filtros. Cada registro contém título, categoria, tema, data da prática, status e descrição.
-
-Este projeto está sendo desenvolvido como parte de uma retomada ao desenvolvimento de software, servindo como um projeto prático e, ao mesmo tempo, como uma ferramenta para organizar e documentar minha evolução diária na programação.
+O JavaScript Projects Dashboard reúne exercícios e projetos em um painel com cadastro, edição, remoção, busca, filtros e indicadores. Cada registro contém título, categoria, tema, data da prática, status e descrição.
 
 A proposta é centralizar todo o trabalho realizado para facilitar a consulta. Os próximos incrementos incluem o acesso direto ao código-fonte e a execução dos exercícios e projetos pelo próprio navegador.
 
@@ -16,11 +14,11 @@ A proposta é centralizar todo o trabalho realizado para facilitar a consulta. O
 - CSS3
 - JavaScript puro, sem bibliotecas ou frameworks
 
-## Prática de desenvolvimento
+## Desenvolvimento
 
-O desenvolvimento é incremental: cada funcionalidade parte de uma necessidade do painel e envolve definir o comportamento, implementar, verificar os resultados e revisar o código.
+O projeto evolui de forma incremental. Cada funcionalidade parte de uma necessidade do painel e envolve definir o comportamento, implementar, testar no navegador e revisar o código.
 
-O projeto aplica funções, arrays, objetos, eventos, manipulação do DOM, validação de formulários e persistência local. Cadastro, edição, remoção e filtros permitem trabalhar a relação entre os dados e sua representação na interface.
+O código utiliza funções, arrays, objetos, eventos, manipulação do DOM, validação de formulários e persistência local. As funcionalidades de cadastro, edição, remoção, busca e filtros mantêm os dados e a interface sincronizados.
 
 Cada registro documenta a prática realizada, sua data e os conceitos envolvidos.
 
@@ -28,7 +26,7 @@ Cada registro documenta a prática realizada, sua data e os conceitos envolvidos
 
 - **JavaScript puro:** implementação direta da lógica e da manipulação do DOM, sem bibliotecas ou frameworks.
 - **localStorage:** persistência dos registros no navegador, sem necessidade de servidor nesta versão.
-- **Filtros combinados:** categoria e status podem ser usados em conjunto; o resumo mantém os totais gerais dos registros.
+- **Busca e filtros combinados:** título, tema, categoria e status podem ser usados em conjunto; o resumo mantém os totais gerais dos registros.
 - **Renderização dos textos:** os campos dos registros são inseridos nos cards com `textContent`.
 
 ## Funcionalidades
@@ -44,6 +42,7 @@ Cada registro documenta a prática realizada, sua data e os conceitos envolvidos
 - [x] Modal para cadastro e edição
 - [x] Filtros por categoria e status
 - [x] Busca por título ou tema
+- [x] Melhorar o tratamento de falhas e dados inválidos na persistência local
 - [ ] Links para visualizar o código
 - [ ] Links para executar exercícios e projetos no navegador
 - [ ] Publicação do dashboard
@@ -83,4 +82,4 @@ Os dados ficam restritos ao navegador e à origem em que foram cadastrados; não
 
 ## Apoio de IA
 
-Utilizo IA como apoio para explicações, revisão de código e ajustes de interface.
+Utilizo IA como apoio para explicações, revisão de código e investigação de problemas.
