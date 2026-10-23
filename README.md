@@ -4,11 +4,11 @@ Dashboard desenvolvido para organizar minha prática em JavaScript durante a ret
 
 ## Sobre o projeto
 
-O JavaScript Projects Dashboard reúne exercícios e projetos em um painel com cadastro, edição, filtros e indicadores. Cada registro contém título, categoria, tema, data da prática, status e descrição.
+O Dashboard reúne exercícios e projetos em um painel com cadastro, edição e filtros. Cada registro contém título, categoria, tema, data da prática, status e descrição.
 
-Sou formado em Sistemas de Informação, com uma base prévia de programação em JavaScript, Python e C++. Desenvolvi este projeto como parte da minha retomada ao desenvolvimento de software, aplicando essa base na construção de uma ferramenta para organizar minha prática.
+Este projeto está sendo desenvolvido como parte de uma retomada ao desenvolvimento de software, servindo como um projeto prático e, ao mesmo tempo, como uma ferramenta para organizar e documentar minha evolução diária na programação.
 
-A proposta é reunir o trabalho realizado e facilitar sua consulta. Os próximos incrementos incluem busca e acesso ao código e à execução dos exercícios e projetos pelo navegador.
+A proposta é centralizar todo o trabalho realizado para facilitar a consulta. Os próximos incrementos incluem o acesso direto ao código-fonte e a execução dos exercícios e projetos pelo próprio navegador.
 
 ## Tecnologias
 
@@ -31,7 +31,7 @@ Cada registro documenta a prática realizada, sua data e os conceitos envolvidos
 - **Filtros combinados:** categoria e status podem ser usados em conjunto; o resumo mantém os totais gerais dos registros.
 - **Renderização dos textos:** os campos dos registros são inseridos nos cards com `textContent`.
 
-## Funcionalidades atuais
+## Funcionalidades
 
 - [x] Estrutura inicial do painel
 - [x] Layout responsivo
@@ -43,18 +43,12 @@ Cada registro documenta a prática realizada, sua data e os conceitos envolvidos
 - [x] Resumo de exercícios e projetos
 - [x] Modal para cadastro e edição
 - [x] Filtros por categoria e status
-
-## Próximas etapas
-
-### Primeira versão
-
-- [ ] Melhorar o tratamento de falhas e dados inválidos na persistência local
-- [ ] Busca por título ou tema
+- [x] Busca por título ou tema
 - [ ] Links para visualizar o código
 - [ ] Links para executar exercícios e projetos no navegador
 - [ ] Publicação do dashboard
 
-### Evolução full stack
+## Evolução full stack
 
 - [ ] Criar uma API para gerenciar os registros
 - [ ] Armazenar os dados em banco de dados
@@ -83,7 +77,7 @@ javascript-projects-dashboard/
 
 ## Status
 
-Em desenvolvimento. O fluxo de cadastro, listagem, edição e remoção está implementado, assim como os filtros e o resumo. A publicação e os demais itens da primeira versão permanecem pendentes.
+Em desenvolvimento. O fluxo de cadastro, listagem, edição e remoção está implementado, assim como a busca, os filtros e o resumo. A publicação e os demais itens da primeira versão permanecem pendentes.
 
 Os dados ficam restritos ao navegador e à origem em que foram cadastrados; não há sincronização entre dispositivos nem uma lista compartilhada entre visitantes. O tratamento de falhas de armazenamento ainda precisa ser melhorado. O repositório ainda não possui uma suíte de testes automatizados.
 

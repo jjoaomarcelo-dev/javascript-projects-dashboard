@@ -31,6 +31,7 @@ const totalEmDesenvolvimento = document.querySelector("#totalEmDesenvolvimento")
 // Filtros
 const filtroCategoria = document.querySelector("#filtroCategoria")
 const filtroStatus = document.querySelector("#filtroStatus")
+const filtroBusca = document.querySelector("#filtroBusca")
 
 let registros = []
 
@@ -140,6 +141,8 @@ const exibirRegistros = () => {
 
     const categoriaSelecionada = filtroCategoria.value
     const statusSelecionado = filtroStatus.value
+    const busca = filtroBusca.value.trim().toLowerCase()
+
     let registrosFiltrados = registros
 
     if (categoriaSelecionada !== "todos") {
@@ -150,12 +153,23 @@ const exibirRegistros = () => {
         registrosFiltrados = registrosFiltrados.filter(registro => registro.status === statusSelecionado)
     }
 
+    if (busca !== "") {
+        registrosFiltrados = registrosFiltrados.filter((registro) => {
+            const titulo = registro.titulo.toLowerCase()
+            const tema = registro.tema.toLowerCase()
+            return titulo.includes(busca) || tema.includes(busca)
+        })
+    }
+
     if (registrosFiltrados.length === 0) {
+        const mensagemEstadoVazio = registros.length === 0
+            ? "Nenhum exercício ou projeto registrado ainda."
+            : "Nenhum exercício ou projeto encontrado."
+
         listaRegistros.innerHTML = `
         <div class="estado-vazio">
-            <strong>Nenhum exercício ou projeto registrado ainda.</strong>
-        </div>
-    `
+            <strong>${mensagemEstadoVazio}</strong>
+        </div>`
         return
     }
 
@@ -331,6 +345,10 @@ btnAdicionar.addEventListener("click", () => {
         behavior: "smooth",
         block: "start"
     })
+})
+
+filtroBusca.addEventListener("input", () => {
+    exibirRegistros()
 })
 
 filtroCategoria.addEventListener("change", () => {
