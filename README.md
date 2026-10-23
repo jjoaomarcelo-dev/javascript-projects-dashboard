@@ -28,6 +28,8 @@ Cada registro documenta a prática realizada, sua data e os conceitos envolvidos
 - **localStorage:** persistência dos registros no navegador, sem necessidade de servidor nesta versão.
 - **Busca e filtros combinados:** título, tema, categoria e status podem ser usados em conjunto; o resumo mantém os totais gerais dos registros.
 - **Renderização dos textos:** os campos dos registros são inseridos nos cards com `textContent`.
+- **Organização dos exercícios:** os arquivos ficarão separados em pastas dentro do projeto, permitindo executar cada exercício e consultar seu código pelo Dashboard. Os registros serão exibidos do mais recente para o mais antigo, sem retirar os exercícios iniciais que mostram minha evolução.
+- **Dados compartilhados:** a primeira versão pública terá um catálogo inicial incluído no projeto. As alterações feitas pelo gerenciamento continuarão salvas no navegador. Futuramente, a API e o banco de dados permitirão que os registros cadastrados sejam compartilhados entre todos os visitantes.
 
 ## Funcionalidades
 
@@ -42,9 +44,11 @@ Cada registro documenta a prática realizada, sua data e os conceitos envolvidos
 - [x] Modal para cadastro e edição
 - [x] Filtros por categoria e status
 - [x] Busca por título ou tema
-- [x] Melhorar o tratamento de falhas e dados inválidos na persistência local
+- [x] Tratamento de dados inválidos e falhas no armazenamento
+- [x] Ordenação dos registros do mais recente para o mais antigo
 - [ ] Links para visualizar o código
 - [ ] Links para executar exercícios e projetos no navegador
+- [ ] Catálogo inicial compartilhado entre os visitantes
 - [ ] Publicação do dashboard
 
 ## Evolução full stack
@@ -52,7 +56,7 @@ Cada registro documenta a prática realizada, sua data e os conceitos envolvidos
 - [ ] Criar uma API para gerenciar os registros
 - [ ] Armazenar os dados em banco de dados
 - [ ] Adicionar autenticação para proteger o cadastro e a edição
-- [ ] Disponibilizar os mesmos registros para todos os visitantes
+- [ ] Substituir o catálogo local por registros persistidos pela API
 - [ ] Migrar gradualmente o projeto para TypeScript e React
 
 A prioridade é concluir e publicar a primeira versão com HTML, CSS e JavaScript. A evolução full stack será avaliada em etapas posteriores.
@@ -64,10 +68,12 @@ A prioridade é concluir e publicar a primeira versão com HTML, CSS e JavaScrip
 
 Não é necessário instalar dependências.
 
-## Estrutura de arquivos
+## Estrutura planejada para a primeira versão
 
 ```text
 javascript-projects-dashboard/
+├── exercicios/  # Exercícios executáveis organizados em pastas
+├── data/        # Catálogo inicial da versão pública
 ├── index.html   # Estrutura da página
 ├── style.css    # Estilos e responsividade
 ├── script.js    # Lógica do painel
@@ -78,7 +84,7 @@ javascript-projects-dashboard/
 
 Em desenvolvimento. O fluxo de cadastro, listagem, edição e remoção está implementado, assim como a busca, os filtros e o resumo. A publicação e os demais itens da primeira versão permanecem pendentes.
 
-Os dados ficam restritos ao navegador e à origem em que foram cadastrados; não há sincronização entre dispositivos nem uma lista compartilhada entre visitantes. O tratamento de falhas de armazenamento ainda precisa ser melhorado. O repositório ainda não possui uma suíte de testes automatizados.
+Os registros criados pelo gerenciamento ainda ficam salvos somente no navegador utilizado. Não há sincronização entre dispositivos, e as alterações não são compartilhadas com outros visitantes. O carregamento e o salvamento já tratam dados inválidos e falhas de armazenamento.
 
 ## Apoio de IA
 

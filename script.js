@@ -194,7 +194,11 @@ const exibirRegistros = () => {
         return
     }
 
-    registrosFiltrados.forEach((registro) => {
+    const registrosOrdenados = [...registrosFiltrados].sort((registroA, registroB) => {
+        return registroB.data.localeCompare(registroA.data)
+    })
+
+    registrosOrdenados.forEach((registro) => {
         // Acessa o vetor registros e retorna o índice do objeto que está sendo percorrido pelo forEach.
         // A posição é a do vetor original, não a da lista filtrada. Se não encontrar o objeto, retorna -1.
         const indiceOriginal = registros.indexOf(registro)
