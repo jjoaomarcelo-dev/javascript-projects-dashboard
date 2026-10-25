@@ -4,9 +4,9 @@ Dashboard desenvolvido para organizar minha prática em JavaScript durante a ret
 
 ## Sobre o projeto
 
-O JavaScript Projects Dashboard reúne exercícios e projetos em um painel com cadastro, edição, remoção, busca, filtros e indicadores. Cada registro contém título, categoria, tema, data da prática, status e descrição.
+O JavaScript Projects Dashboard reúne exercícios e projetos em um painel com cadastro, edição, remoção, busca, filtros e indicadores. Cada registro contém título, categoria, tema, data da prática, status, descrição e, quando disponível, links para execução e código.
 
-A proposta é centralizar todo o trabalho realizado para facilitar a consulta. Os próximos incrementos incluem o acesso direto ao código-fonte e a execução dos exercícios e projetos pelo próprio navegador.
+A proposta é centralizar todo o trabalho realizado para facilitar a consulta e acessar cada exercício ou projeto diretamente pelo painel.
 
 ## Tecnologias
 
@@ -18,7 +18,7 @@ A proposta é centralizar todo o trabalho realizado para facilitar a consulta. O
 
 O projeto evolui de forma incremental. Cada funcionalidade parte de uma necessidade do painel e envolve definir o comportamento, implementar, testar no navegador e revisar o código.
 
-O código utiliza funções, arrays, objetos, eventos, manipulação do DOM, validação de formulários e persistência local. As funcionalidades de cadastro, edição, remoção, busca e filtros mantêm os dados e a interface sincronizados.
+O código utiliza funções, arrays, objetos, eventos, manipulação do DOM, validação de formulários e persistência local. As funcionalidades de cadastro, edição, remoção, busca, filtros e links mantêm os dados e a interface sincronizados.
 
 Cada registro documenta a prática realizada, sua data e os conceitos envolvidos.
 
@@ -46,8 +46,8 @@ Cada registro documenta a prática realizada, sua data e os conceitos envolvidos
 - [x] Busca por título ou tema
 - [x] Tratamento de dados inválidos e falhas no armazenamento
 - [x] Ordenação dos registros do mais recente para o mais antigo
-- [ ] Links para visualizar o código
-- [ ] Links para executar exercícios e projetos no navegador
+- [x] Links para visualizar o código
+- [x] Links para executar exercícios e projetos no navegador
 - [ ] Catálogo inicial compartilhado entre os visitantes
 - [ ] Publicação do dashboard
 
@@ -82,7 +82,7 @@ javascript-projects-dashboard/
 
 ## Status
 
-Em desenvolvimento. O fluxo de cadastro, listagem, edição e remoção está implementado, assim como a busca, os filtros e o resumo. A publicação e os demais itens da primeira versão permanecem pendentes.
+Em desenvolvimento. O fluxo de cadastro, listagem, edição e remoção está implementado, assim como a busca, os filtros, o resumo e os links para código e execução. A publicação e os demais itens da primeira versão permanecem pendentes.
 
 Os registros criados pelo gerenciamento ainda ficam salvos somente no navegador utilizado. Não há sincronização entre dispositivos, e as alterações não são compartilhadas com outros visitantes. O carregamento e o salvamento já tratam dados inválidos e falhas de armazenamento.
 
