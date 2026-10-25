@@ -29,7 +29,7 @@ Cada registro documenta a prática realizada, sua data e os conceitos envolvidos
 - **Busca e filtros combinados:** título, tema, categoria e status podem ser usados em conjunto; o resumo mantém os totais gerais dos registros.
 - **Renderização dos textos:** os campos dos registros são inseridos nos cards com `textContent`.
 - **Organização dos exercícios:** os arquivos ficarão separados em pastas dentro do projeto, permitindo executar cada exercício e consultar seu código pelo Dashboard. Os registros serão exibidos do mais recente para o mais antigo, sem retirar os exercícios iniciais que mostram minha evolução.
-- **Dados compartilhados:** a primeira versão pública terá um catálogo inicial incluído no projeto. As alterações feitas pelo gerenciamento continuarão salvas no navegador. Futuramente, a API e o banco de dados permitirão que os registros cadastrados sejam compartilhados entre todos os visitantes.
+- **Dados compartilhados:** a pasta `data/` já contém o arquivo `registros.json`, preparado para receber o catálogo inicial da versão pública. A próxima etapa é carregá-lo quando o navegador não tiver registros no `localStorage`. As alterações feitas pelo gerenciamento continuarão salvas no navegador. Futuramente, a API e o banco de dados permitirão que os registros cadastrados sejam compartilhados entre todos os visitantes.
 
 ## Funcionalidades
 
@@ -48,7 +48,8 @@ Cada registro documenta a prática realizada, sua data e os conceitos envolvidos
 - [x] Ordenação dos registros do mais recente para o mais antigo
 - [x] Links para visualizar o código
 - [x] Links para executar exercícios e projetos no navegador
-- [ ] Catálogo inicial compartilhado entre os visitantes
+- [ ] Carregar o catálogo inicial de `data/registros.json` para visitantes sem registros locais
+- [ ] Preencher o catálogo inicial com exercícios e projetos publicados
 - [ ] Publicação do dashboard
 
 ## Evolução full stack
@@ -73,7 +74,7 @@ Não é necessário instalar dependências.
 ```text
 javascript-projects-dashboard/
 ├── exercicios/  # Exercícios executáveis organizados em pastas
-├── data/        # Catálogo inicial da versão pública
+├── data/        # Catálogo inicial da versão pública (carregamento pendente)
 ├── index.html   # Estrutura da página
 ├── style.css    # Estilos e responsividade
 ├── script.js    # Lógica do painel
@@ -82,7 +83,7 @@ javascript-projects-dashboard/
 
 ## Status
 
-Em desenvolvimento. O fluxo de cadastro, listagem, edição e remoção está implementado, assim como a busca, os filtros, o resumo e os links para código e execução. A publicação e os demais itens da primeira versão permanecem pendentes.
+Em desenvolvimento. O fluxo de cadastro, listagem, edição e remoção está implementado, assim como a busca, os filtros, o resumo e os links para código e execução. A estrutura do catálogo inicial foi criada em `data/registros.json`; o carregamento desse arquivo e a publicação permanecem pendentes.
 
 Os registros criados pelo gerenciamento ainda ficam salvos somente no navegador utilizado. Não há sincronização entre dispositivos, e as alterações não são compartilhadas com outros visitantes. O carregamento e o salvamento já tratam dados inválidos e falhas de armazenamento.
 
