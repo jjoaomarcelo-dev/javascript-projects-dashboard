@@ -60,16 +60,44 @@ const registroValido = (registro) => {
         && statusValido && linkExecucaoValido && linkCodigoValido
 }
 
-// Carrega os registros salvos ao abrir ou atualizar a página.
-const registrosSalvos = localStorage.getItem("registros")
-if (registrosSalvos !== null) {
+// Carrega e valida os registros salvos apenas neste navegador.
+const carregarRegistrosLocais = () => {
+    const registrosSalvos = localStorage.getItem("registros")
+    if (registrosSalvos === null) {
+        return null
+    }
+
     try {
         const registrosConvertidos = JSON.parse(registrosSalvos)
         if (Array.isArray(registrosConvertidos)) {
-            registros = registrosConvertidos.filter(registroValido)
+            return registrosConvertidos.filter(registroValido)
         }
+
+        console.error("Erro, os dados salvos não são uma lista de registros.")
     } catch (erro) {
         console.error("Erro, dados de registros inválidos.", erro)
+    }
+
+    return null
+}
+
+// Carrega o catálogo público usado por visitantes sem registros locais.
+const carregarCatalogoInicial = async () => {
+    try {
+        const resposta = await fetch("./data/registros.json")
+        if (!resposta.ok) {
+            throw new Error(`Não foi possível carregar o catálogo: ${resposta.status}`)
+        }
+
+        const catalogo = await resposta.json()
+        if (!Array.isArray(catalogo)) {
+            throw new Error("O catálogo inicial precisa ser uma lista de registros.")
+        }
+
+        return catalogo.filter(registroValido)
+    } catch (erro) {
+        console.error("Erro ao carregar o catálogo inicial.", erro)
+        return []
     }
 }
 
@@ -439,6 +467,16 @@ filtroStatus.addEventListener("change", () => {
     exibirRegistros()
 })
 
-if (registros.length > 0) {
+const iniciarPainel = async () => {
+    const registrosLocais = carregarRegistrosLocais()
+
+    if (registrosLocais !== null) {
+        registros = registrosLocais
+    } else {
+        registros = await carregarCatalogoInicial()
+    }
+
     exibirRegistros()
 }
+
+iniciarPainel()

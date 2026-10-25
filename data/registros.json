@@ -1,1 +1,12 @@
-[]
+[
+    {
+        "titulo": "JavaScript Projects Dashboard",
+        "categoria": "projeto",
+        "tema": "CRUD, DOM e localStorage",
+        "data": "2026-10-25",
+        "status": "concluido",
+        "descricao": "Dashboard para organizar exercícios e projetos de JavaScript, com cadastro, filtros, busca, persistência local e links para código e execução.",
+        "linkExecucao": "",
+        "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard"
+    }
+]

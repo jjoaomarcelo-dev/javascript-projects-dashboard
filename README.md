@@ -29,7 +29,7 @@ Cada registro documenta a prática realizada, sua data e os conceitos envolvidos
 - **Busca e filtros combinados:** título, tema, categoria e status podem ser usados em conjunto; o resumo mantém os totais gerais dos registros.
 - **Renderização dos textos:** os campos dos registros são inseridos nos cards com `textContent`.
 - **Organização dos exercícios:** os arquivos ficarão separados em pastas dentro do projeto, permitindo executar cada exercício e consultar seu código pelo Dashboard. Os registros serão exibidos do mais recente para o mais antigo, sem retirar os exercícios iniciais que mostram minha evolução.
-- **Dados compartilhados:** a pasta `data/` já contém o arquivo `registros.json`, preparado para receber o catálogo inicial da versão pública. A próxima etapa é carregá-lo quando o navegador não tiver registros no `localStorage`. As alterações feitas pelo gerenciamento continuarão salvas no navegador. Futuramente, a API e o banco de dados permitirão que os registros cadastrados sejam compartilhados entre todos os visitantes.
+- **Dados compartilhados:** o catálogo inicial fica em `data/registros.json` e é carregado quando o visitante ainda não tem registros no `localStorage`. As alterações feitas pelo gerenciamento continuam salvas somente no navegador utilizado. Futuramente, a API e o banco de dados permitirão que os registros cadastrados sejam compartilhados entre todos os visitantes.
 
 ## Funcionalidades
 
@@ -48,8 +48,9 @@ Cada registro documenta a prática realizada, sua data e os conceitos envolvidos
 - [x] Ordenação dos registros do mais recente para o mais antigo
 - [x] Links para visualizar o código
 - [x] Links para executar exercícios e projetos no navegador
-- [ ] Carregar o catálogo inicial de `data/registros.json` para visitantes sem registros locais
-- [ ] Preencher o catálogo inicial com exercícios e projetos publicados
+- [x] Carregar o catálogo inicial de `data/registros.json` para visitantes sem registros locais
+- [x] Adicionar o primeiro projeto ao catálogo público
+- [ ] Adicionar exercícios e projetos concluídos ao catálogo público
 - [ ] Publicação do dashboard
 
 ## Evolução full stack
@@ -65,16 +66,17 @@ A prioridade é concluir e publicar a primeira versão com HTML, CSS e JavaScrip
 ## Como executar
 
 1. Baixe ou clone o repositório.
-2. Abra o arquivo `index.html` no navegador.
+2. No terminal, entre na pasta do projeto e execute `python3 -m http.server`.
+3. Abra `http://localhost:8000` no navegador.
 
-Não é necessário instalar dependências.
+Não é necessário instalar dependências. Um servidor local é usado para permitir o carregamento de `data/registros.json`.
 
 ## Estrutura planejada para a primeira versão
 
 ```text
 javascript-projects-dashboard/
 ├── exercicios/  # Exercícios executáveis organizados em pastas
-├── data/        # Catálogo inicial da versão pública (carregamento pendente)
+├── data/        # Catálogo inicial da versão pública
 ├── index.html   # Estrutura da página
 ├── style.css    # Estilos e responsividade
 ├── script.js    # Lógica do painel
@@ -83,7 +85,7 @@ javascript-projects-dashboard/
 
 ## Status
 
-Em desenvolvimento. O fluxo de cadastro, listagem, edição e remoção está implementado, assim como a busca, os filtros, o resumo e os links para código e execução. A estrutura do catálogo inicial foi criada em `data/registros.json`; o carregamento desse arquivo e a publicação permanecem pendentes.
+Em desenvolvimento. O fluxo de cadastro, listagem, edição e remoção está implementado, assim como a busca, os filtros, o resumo, os links para código e execução e o carregamento do catálogo inicial. A publicação permanece pendente.
 
 Os registros criados pelo gerenciamento ainda ficam salvos somente no navegador utilizado. Não há sincronização entre dispositivos, e as alterações não são compartilhadas com outros visitantes. O carregamento e o salvamento já tratam dados inválidos e falhas de armazenamento.
 
