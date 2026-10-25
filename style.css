@@ -7,6 +7,9 @@
     --borda: #dcded5;
     --destaque: #f0cf4a;
     --foco: #48623e;
+    --acao-neutra: #4f574d;
+    --acao-neutra-borda: #bdc3b8;
+    --acao-neutra-fundo: #f1f3ef;
     --raio: 12px;
 }
 
@@ -84,7 +87,7 @@ header > p:last-child {
 }
 
 h2 {
-    margin-bottom: 6px;
+    margin-bottom: 12px;
     font-size: 1.15rem;
     letter-spacing: -0.025em;
 }
@@ -374,7 +377,8 @@ input:hover, select:hover, textarea:hover {
     border-color: #949d8d;
 }
 
-input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible {
+input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible,
+.link-registro:focus-visible {
     outline: 3px solid var(--foco);
     outline-offset: 3px;
 }
@@ -454,7 +458,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-
     align-items: flex-start;
     justify-content: space-between;
     gap: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
 }
 
 .registro-card h3 {
@@ -497,6 +501,36 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-
     color: #315f8c;
 }
 
+.links-registro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--borda);
+}
+
+.link-registro {
+    display: inline-flex;
+    align-items: center;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--acao-neutra-borda);
+    color: var(--acao-neutra);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 150ms ease;
+}
+
+.link-registro:hover {
+    border-bottom-color: currentColor;
+    color: var(--texto);
+}
+
+.link-registro:active {
+    color: #141713;
+}
+
 .acoes-registro {
     display: flex;
     justify-content: center;
@@ -518,31 +552,32 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-
 }
 
 .botao-editar {
-    border: 1px solid #9aaa93;
-    color: var(--foco);
+    border: 1px solid var(--acao-neutra-borda);
+    color: var(--acao-neutra);
 }
 
 .botao-editar:hover {
-    border-color: var(--foco);
-    background: #f0f4ed;
+    border-color: #838b80;
+    background: var(--acao-neutra-fundo);
+    color: var(--texto);
 }
 
 .botao-editar:active {
-    background: #e4ebe0;
+    background: #e5e9e3;
 }
 
 .botao-remover {
-    border: 1px solid #d8a09b;
-    color: #b42318;
+    border: 1px solid #d8b6b2;
+    color: #a13d35;
 }
 
 .botao-remover:hover {
-    border-color: #b42318;
-    background: #fef3f2;
+    border-color: #a13d35;
+    background: #fdf5f4;
 }
 
 .botao-remover:active {
-    background: #fee4e2;
+    background: #f9e9e7;
 }
 
 .estado-vazio {

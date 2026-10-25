@@ -5,6 +5,8 @@ const f_tema = document.querySelector("#f_tema")
 const f_data = document.querySelector("#f_data")
 const f_status = document.querySelector("#f_status")
 const f_descricao = document.querySelector("#f_descricao")
+const f_linkExecucao = document.querySelector("#f_linkExecucao")
+const f_linkCodigo = document.querySelector("#f_linkCodigo")
 
 // Mensagens de validação
 const erroTitulo = document.querySelector("#erroTitulo")
@@ -12,6 +14,8 @@ const erroCategoria = document.querySelector("#erroCategoria")
 const erroTema = document.querySelector("#erroTema")
 const erroData = document.querySelector("#erroData")
 const erroDescricao = document.querySelector("#erroDescricao")
+const erroLinkExecucao = document.querySelector("#erroLinkExecucao")
+const erroLinkCodigo = document.querySelector("#erroLinkCodigo")
 
 // Controle
 const btnAdicionar = document.querySelector("#btnAdicionar")
@@ -50,7 +54,10 @@ const registroValido = (registro) => {
     const descricaoValida = typeof registro.descricao === "string"
     const categoriaValida = ["exercicio", "projeto"].includes(registro.categoria)
     const statusValido = ["concluido", "em-desenvolvimento"].includes(registro.status)
-    return tituloValido && temaValido && dataValida && descricaoValida && categoriaValida && statusValido
+    const linkExecucaoValido = registro.linkExecucao === undefined || typeof registro.linkExecucao === "string"
+    const linkCodigoValido = registro.linkCodigo === undefined || typeof registro.linkCodigo === "string"
+    return tituloValido && temaValido && dataValida && descricaoValida && categoriaValida
+        && statusValido && linkExecucaoValido && linkCodigoValido
 }
 
 // Carrega os registros salvos ao abrir ou atualizar a página.
@@ -74,12 +81,16 @@ const validarCampos = () => {
     const tema = f_tema.value.trim()
     const data = f_data.value
     const descricao = f_descricao.value.trim()
+    const linkExecucao = f_linkExecucao.value.trim()
+    const linkCodigo = f_linkCodigo.value.trim()
 
     erroTitulo.textContent = ""
     erroCategoria.textContent = ""
     erroTema.textContent = ""
     erroData.textContent = ""
     erroDescricao.textContent = ""
+    erroLinkExecucao.textContent = ""
+    erroLinkCodigo.textContent = ""
 
     if (titulo === "") {
         erroTitulo.textContent = "*Campo obrigatório"
@@ -106,6 +117,17 @@ const validarCampos = () => {
 
     if (descricao === "") {
         erroDescricao.textContent = "*Campo obrigatório"
+        camposValidos = false
+    }
+
+    if (linkExecucao !== "" && !linkExecucao.startsWith("./")
+        && !linkExecucao.startsWith("https://")) {
+        erroLinkExecucao.textContent = "*Use um caminho começando com ./ ou uma URL https://"
+        camposValidos = false
+    }
+
+    if (linkCodigo !== "" && !linkCodigo.startsWith("https://")) {
+        erroLinkCodigo.textContent = "*Use uma URL começando com https://"
         camposValidos = false
     }
 
@@ -138,6 +160,8 @@ const limparCampos = () => {
     f_data.value = ""
     f_status.value = "concluido"
     f_descricao.value = ""
+    f_linkExecucao.value = ""
+    f_linkCodigo.value = ""
 }
 
 const atualizarResumo = () => {
@@ -249,6 +273,33 @@ const exibirRegistros = () => {
         const registroDescricao = criarDetalheRegistro("Descrição", registro.descricao)
         registroCard.append(registroDescricao)
 
+        const linksRegistro = document.createElement("div")
+        linksRegistro.classList.add("links-registro")
+
+        if (registro.linkExecucao) {
+            const linkParaExecucao = document.createElement("a")
+            linkParaExecucao.href = registro.linkExecucao
+            linkParaExecucao.textContent = "Executar"
+            linkParaExecucao.target = "_blank"
+            linkParaExecucao.rel = "noopener noreferrer"
+            linkParaExecucao.classList.add("link-registro")
+            linksRegistro.append(linkParaExecucao)
+        }
+
+        if (registro.linkCodigo) {
+            const linkParaCodigo = document.createElement("a")
+            linkParaCodigo.href = registro.linkCodigo
+            linkParaCodigo.textContent = "Ver código"
+            linkParaCodigo.target = "_blank"
+            linkParaCodigo.rel = "noopener noreferrer"
+            linkParaCodigo.classList.add("link-registro")
+            linksRegistro.append(linkParaCodigo)
+        }
+
+        if (linksRegistro.childElementCount > 0) {
+            registroCard.append(linksRegistro)
+        }
+
         const acoesRegistro = document.createElement("div")
         acoesRegistro.classList.add("acoes-registro")
 
@@ -270,6 +321,8 @@ const exibirRegistros = () => {
             f_data.value = registro.data
             f_status.value = registro.status
             f_descricao.value = registro.descricao
+            f_linkExecucao.value = registro.linkExecucao || ""
+            f_linkCodigo.value = registro.linkCodigo || ""
 
             f_titulo.focus()
 
@@ -352,7 +405,10 @@ btnAdicionar.addEventListener("click", () => {
         tema: temaFormatado,
         data: f_data.value,
         status: f_status.value,
-        descricao: f_descricao.value.trim()
+        descricao: f_descricao.value.trim(),
+        linkExecucao: f_linkExecucao.value.trim(),
+        linkCodigo: f_linkCodigo.value.trim()
+
     }
 
     if (indiceEdicao === null) {
@@ -369,11 +425,6 @@ btnAdicionar.addEventListener("click", () => {
     exibirRegistros()
     limparCampos()
     formularioGerenciamento.close()
-
-    listaRegistros.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    })
 })
 
 filtroBusca.addEventListener("input", () => {

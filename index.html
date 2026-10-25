@@ -135,6 +135,19 @@
                     <span id="erroDescricao" aria-live="polite"></span>
                 </div>
 
+                <div class="campoForm">
+                    <label for="f_linkExecucao">Link para execução</label>
+                    <input type="text" inputmode="url" name="linkExecucao" id="f_linkExecucao"
+                        placeholder="./exercicios/... ou https://...">
+                    <span id="erroLinkExecucao" aria-live="polite"></span>
+                </div>
+
+                <div class="campoForm">
+                    <label for="f_linkCodigo">Link do código</label>
+                    <input type="url" name="linkCodigo" id="f_linkCodigo" placeholder="https://github.com/...">
+                    <span id="erroLinkCodigo" aria-live="polite"></span>
+                </div>
+
                 <div class="acoes-formulario">
                     <button type="button" id="btnAdicionar">Adicionar exercício ou projeto</button>
                     <button type="button" id="btnCancelar" hidden>Cancelar</button>
