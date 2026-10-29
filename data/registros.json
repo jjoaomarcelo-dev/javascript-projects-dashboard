@@ -1,12 +1,312 @@
 [
-    {
-        "titulo": "JavaScript Projects Dashboard",
-        "categoria": "projeto",
-        "tema": "CRUD, DOM e localStorage",
-        "data": "2026-10-25",
-        "status": "concluido",
-        "descricao": "Dashboard para organizar exercícios e projetos de JavaScript, com cadastro, filtros, busca, persistência local e links para código e execução.",
-        "linkExecucao": "",
-        "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard"
-    }
+  {
+    "titulo": "Capíva — Landing Page",
+    "categoria": "projeto",
+    "tema": "HTML, CSS, JavaScript e layout responsivo",
+    "data": "2026-10-09",
+    "status": "em-desenvolvimento",
+    "descricao": "Página de apresentação do Capíva, projeto pessoal de organização financeira, com temas claro e escuro e acesso ao Controle de Parcelas. Versão publicada; novas funcionalidades pausadas. Data referente à última revisão registrada no repositório.",
+    "linkExecucao": "https://jjoaomarcelo-dev.github.io/capiva-landing-page/",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/capiva-landing-page"
+  },
+  {
+    "titulo": "Capíva — Controle de Parcelas",
+    "categoria": "projeto",
+    "tema": "JavaScript, DOM, localStorage e regras de parcelamento",
+    "data": "2026-10-09",
+    "status": "em-desenvolvimento",
+    "descricao": "Aplicação para cadastrar compras parceladas, acompanhar vencimentos e registrar pagamentos, com dados salvos no navegador. Desenvolvida com apoio de IA em partes da implementação. Versão publicada; novas funcionalidades pausadas. Data referente à última revisão registrada no repositório.",
+    "linkExecucao": "https://jjoaomarcelo-dev.github.io/capiva-installment-tracker/",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/capiva-installment-tracker"
+  },
+  {
+    "titulo": "JavaScript Projects Dashboard",
+    "categoria": "projeto",
+    "tema": "CRUD, DOM e localStorage",
+    "data": "2026-10-25",
+    "status": "em-desenvolvimento",
+    "descricao": "Dashboard para organizar exercícios e projetos de JavaScript, com cadastro, filtros, busca, persistência local e links para código e execução.",
+    "linkExecucao": "",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard"
+  },
+  {
+    "titulo": "Exercício 01 — Verificador de paridade",
+    "categoria": "exercicio",
+    "tema": "Condicionais e funções",
+    "data": "2026-08-03",
+    "status": "concluido",
+    "descricao": "Desenvolva uma página que receba um número inteiro e informe sua paridade.",
+    "linkExecucao": "./exercicios/exercicio-01-par-impar/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-01-par-impar"
+  },
+  {
+    "titulo": "Exercício 02 — Maior entre três números",
+    "categoria": "exercicio",
+    "tema": "Comparações e validação",
+    "data": "2026-08-06",
+    "status": "concluido",
+    "descricao": "Desenvolva uma ferramenta que receba três números e apresente o maior deles.",
+    "linkExecucao": "./exercicios/exercicio-02-maior-numero/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-02-maior-numero"
+  },
+  {
+    "titulo": "Exercício 03 — Maior número de um array",
+    "categoria": "exercicio",
+    "tema": "Arrays, comparação e for...of",
+    "data": "2026-08-10",
+    "status": "concluido",
+    "descricao": "Dado o array [12, 45, 7, 89, 23, 56], identifique o maior número.",
+    "linkExecucao": "./exercicios/exercicio-03-maior-numero-array/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-03-maior-numero-array"
+  },
+  {
+    "titulo": "Exercício 04 — Análise de array",
+    "categoria": "exercicio",
+    "tema": "Arrays, laços e acumuladores",
+    "data": "2026-08-14",
+    "status": "concluido",
+    "descricao": "Analise a sequência [12, 45, 7, 89, 23, 56, 18, 91, 4] e apresente um resumo estatístico.",
+    "linkExecucao": "./exercicios/exercicio-04-analise-array/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-04-analise-array"
+  },
+  {
+    "titulo": "Exercício 05 — Separação de pares e ímpares",
+    "categoria": "exercicio",
+    "tema": "Arrays e condicionais",
+    "data": "2026-08-19",
+    "status": "concluido",
+    "descricao": "Classifique os números de [12, 5, 8, 21, 16, 7, 30, 11, 42] em duas coleções: pares e ímpares.",
+    "linkExecucao": "./exercicios/exercicio-05-separando-pares-impares/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-05-separando-pares-impares"
+  },
+  {
+    "titulo": "Exercício 06 — Valores acima de um limite",
+    "categoria": "exercicio",
+    "tema": "Seleção e acumulação",
+    "data": "2026-08-24",
+    "status": "concluido",
+    "descricao": "Analise [10, 25, 8, 42, 17, 60, 3, 31, 50] e produza um relatório dos valores maiores que 20.",
+    "linkExecucao": "./exercicios/exercicio-06-filtrando-valores/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-06-filtrando-valores"
+  },
+  {
+    "titulo": "Exercício 07 — Análise de pares e ímpares",
+    "categoria": "exercicio",
+    "tema": "Classificação e acumuladores",
+    "data": "2026-08-28",
+    "status": "concluido",
+    "descricao": "Produza um relatório de paridade para [12, 7, 25, 18, 3, 40, 11, 22, 9, 30].",
+    "linkExecucao": "./exercicios/exercicio-07-separando-valores/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-07-separando-valores"
+  },
+  {
+    "titulo": "Exercício 08 — Relatório de notas",
+    "categoria": "exercicio",
+    "tema": "Validação e média de notas",
+    "data": "2026-09-02",
+    "status": "concluido",
+    "descricao": "Dadas as notas [8, 5, 9, 6, 4, 10, 7, 3], apresente um relatório da turma, considerando aprovação a partir de 7.",
+    "linkExecucao": "./exercicios/exercicio-08-analisando-notas/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-08-analisando-notas"
+  },
+  {
+    "titulo": "Exercício 09 — Contador de cliques",
+    "categoria": "exercicio",
+    "tema": "Eventos e estado",
+    "data": "2026-09-04",
+    "status": "concluido",
+    "descricao": "Construa um contador que registre quantas vezes o usuário acionou um botão.",
+    "linkExecucao": "./exercicios/exercicio-09-contador-de-cliques/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-09-contador-de-cliques"
+  },
+  {
+    "titulo": "Exercício 10 — Contador com controles",
+    "categoria": "exercicio",
+    "tema": "DOM e controle de estado",
+    "data": "2026-09-06",
+    "status": "concluido",
+    "descricao": "Desenvolva um contador com ações de aumentar, diminuir e reiniciar.",
+    "linkExecucao": "./exercicios/exercicio-10-contador-com-controles/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-10-contador-com-controles"
+  },
+  {
+    "titulo": "Exercício 11 — Contador com passo personalizado",
+    "categoria": "exercicio",
+    "tema": "Validação e estado",
+    "data": "2026-09-08",
+    "status": "concluido",
+    "descricao": "Amplie o contador para permitir que o usuário escolha o tamanho do incremento e do decremento.",
+    "linkExecucao": "./exercicios/exercicio-11-contador-com-passo-personalizado/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-11-contador-com-passo-personalizado"
+  },
+  {
+    "titulo": "Exercício 12 — Meta de economia",
+    "categoria": "exercicio",
+    "tema": "Acumulação e metas",
+    "data": "2026-09-10",
+    "status": "concluido",
+    "descricao": "Crie um acompanhamento de economia com meta de R$ 100 e saldo inicial de R$ 0.",
+    "linkExecucao": "./exercicios/exercicio-12-meta-de-economia/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-12-meta-de-economia"
+  },
+  {
+    "titulo": "Exercício 13 — Seleção de cursos",
+    "categoria": "exercicio",
+    "tema": "Eventos e seleção no DOM",
+    "data": "2026-09-12",
+    "status": "concluido",
+    "descricao": "Uma página apresenta HTML, CSS, JavaScript e React. Permita selecionar cursos e consultar a quantidade selecionada.",
+    "linkExecucao": "./exercicios/exercicio-13-selecionando-cursos/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-13-selecionando-cursos"
+  },
+  {
+    "titulo": "Exercício 14 — Transferência de cursos",
+    "categoria": "exercicio",
+    "tema": "Manipulação do DOM",
+    "data": "2026-09-15",
+    "status": "concluido",
+    "descricao": "Organize HTML, CSS, JavaScript, PHP, React e MySQL entre duas listas: disponíveis e transferidos.",
+    "linkExecucao": "./exercicios/exercicio-14-transferencia-de-cursos-dom/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-14-transferencia-de-cursos-dom"
+  },
+  {
+    "titulo": "Exercício 15 — Filtro de maioridade",
+    "categoria": "exercicio",
+    "tema": "Arrays e filter()",
+    "data": "2026-09-18",
+    "status": "concluido",
+    "descricao": "A partir de [12, 18, 25, 16, 30, 14, 21, 17], apresente as pessoas com idade suficiente para a maioridade, considerada aos 18 anos.",
+    "linkExecucao": "./exercicios/exercicio-15-filtrando-idades/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-15-filtrando-idades"
+  },
+  {
+    "titulo": "Exercício 16 — Busca de curso",
+    "categoria": "exercicio",
+    "tema": "Arrays e find()",
+    "data": "2026-09-20",
+    "status": "concluido",
+    "descricao": "Permita consultar um curso no catálogo [HTML, CSS, JavaScript, React, Node.js].",
+    "linkExecucao": "./exercicios/exercicio-16-buscando-curso/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-16-buscando-curso"
+  },
+  {
+    "titulo": "Exercício 17 — Situação de uma turma",
+    "categoria": "exercicio",
+    "tema": "Arrays e every()",
+    "data": "2026-09-22",
+    "status": "concluido",
+    "descricao": "Receba notas de uma turma e determine se todos atingiram a média mínima de 7.",
+    "linkExecucao": "./exercicios/exercicio-17-verificando-notas/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-17-verificando-notas"
+  },
+  {
+    "titulo": "Exercício 18 — Disponibilidade de produtos",
+    "categoria": "exercicio",
+    "tema": "Arrays e some()",
+    "data": "2026-09-24",
+    "status": "concluido",
+    "descricao": "Permita consultar se um produto pertence ao catálogo de periféricos apresentado na página.",
+    "linkExecucao": "./exercicios/exercicio-18-verificando-estoque/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-18-verificando-estoque"
+  },
+  {
+    "titulo": "Exercício 19 — Calculadora de inteiros",
+    "categoria": "exercicio",
+    "tema": "Funções e operações aritméticas",
+    "data": "2026-09-27",
+    "status": "concluido",
+    "descricao": "Desenvolva uma calculadora com dois operandos e operações de soma, subtração, multiplicação e divisão.",
+    "linkExecucao": "./exercicios/exercicio-19-calculadora/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-19-calculadora"
+  },
+  {
+    "titulo": "Exercício 20 — Controle de estoque com Map",
+    "categoria": "exercicio",
+    "tema": "Coleção Map",
+    "data": "2026-09-30",
+    "status": "concluido",
+    "descricao": "Construa um controle de estoque em que cada nome de produto esteja associado à sua quantidade.",
+    "linkExecucao": "./exercicios/exercicio-20-controle-de-estoque-map/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-20-controle-de-estoque-map"
+  },
+  {
+    "titulo": "Exercício 21 — Registro de notas com Map",
+    "categoria": "exercicio",
+    "tema": "Operações com Map",
+    "data": "2026-10-03",
+    "status": "concluido",
+    "descricao": "Gerencie notas de alunos com Map, permitindo cadastrar, consultar, atualizar e remover registros com validação.",
+    "linkExecucao": "./exercicios/exercicio-21-praticando-map/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-21-praticando-map"
+  },
+  {
+    "titulo": "Exercício 22 — Lista de presença com Set",
+    "categoria": "exercicio",
+    "tema": "Coleção Set",
+    "data": "2026-10-06",
+    "status": "concluido",
+    "descricao": "Desenvolva uma lista de presença que permita registrar, consultar e remover participantes sem duplicações.",
+    "linkExecucao": "./exercicios/exercicio-22-lista-de-presenca-set/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-22-lista-de-presenca-set"
+  },
+  {
+    "titulo": "Exercício 23 — Cadastro de pessoas com classes",
+    "categoria": "exercicio",
+    "tema": "Classes e objetos",
+    "data": "2026-10-08",
+    "status": "concluido",
+    "descricao": "Construa um cadastro de pessoas com nome e idade, apresentando a relação de pessoas registradas.",
+    "linkExecucao": "./exercicios/exercicio-23-cadastro-de-pessoas-com-classes/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-23-cadastro-de-pessoas-com-classes"
+  },
+  {
+    "titulo": "Exercício 24 — Agenda de contatos",
+    "categoria": "exercicio",
+    "tema": "Objetos literais e referências",
+    "data": "2026-10-12",
+    "status": "concluido",
+    "descricao": "Gerencie uma agenda de contatos com cadastro, consulta, atualização e remoção usando objetos literais.",
+    "linkExecucao": "./exercicios/exercicio-24-agenda-de-contatos/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-24-agenda-de-contatos"
+  },
+  {
+    "titulo": "Exercício 25 — Status de tarefas",
+    "categoria": "exercicio",
+    "tema": "Objetos e atualização de estado",
+    "data": "2026-10-14",
+    "status": "concluido",
+    "descricao": "Gerencie tarefas, atualizando seu status e mantendo a lista sincronizada com objetos literais.",
+    "linkExecucao": "./exercicios/exercicio-25-status-de-tarefas/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-25-status-de-tarefas"
+  },
+  {
+    "titulo": "Exercício 26 — Progresso de estudos",
+    "categoria": "exercicio",
+    "tema": "some(), find(), filter() e map()",
+    "data": "2026-10-16",
+    "status": "concluido",
+    "descricao": "Registre e filtre estudos usando some(), find(), filter() e map(), com validação dos dados.",
+    "linkExecucao": "./exercicios/exercicio-26-progresso-de-estudos/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-26-progresso-de-estudos"
+  },
+  {
+    "titulo": "Exercício 27 — Biblioteca pessoal com classes",
+    "categoria": "exercicio",
+    "tema": "Classes e regras de negócio",
+    "data": "2026-10-17",
+    "status": "concluido",
+    "descricao": "Desenvolva uma biblioteca pessoal com cadastro, consulta, empréstimo e devolução de livros.",
+    "linkExecucao": "./exercicios/exercicio-27-biblioteca-com-classes/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-27-biblioteca-com-classes"
+  },
+  {
+    "titulo": "Exercício 28 — Biblioteca com herança",
+    "categoria": "exercicio",
+    "tema": "Classes, herança e polimorfismo",
+    "data": "2026-10-19",
+    "status": "concluido",
+    "descricao": "Evolua a biblioteca com Livro, LivroFisico e LivroDigital, usando herança e regras de empréstimo.",
+    "linkExecucao": "./exercicios/exercicio-28-biblioteca-com-heranca/index.html",
+    "linkCodigo": "https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard/tree/main/exercicios/exercicio-28-biblioteca-com-heranca"
+  }
 ]

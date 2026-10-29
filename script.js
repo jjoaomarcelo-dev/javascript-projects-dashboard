@@ -38,6 +38,7 @@ const filtroStatus = document.querySelector("#filtroStatus")
 const filtroBusca = document.querySelector("#filtroBusca")
 
 let registros = []
+let erroCarregamentoCatalogo = false
 
 // Fica com a posição do registro enquanto ele está sendo editado.
 let indiceEdicao = null
@@ -62,12 +63,12 @@ const registroValido = (registro) => {
 
 // Carrega e valida os registros salvos apenas neste navegador.
 const carregarRegistrosLocais = () => {
-    const registrosSalvos = localStorage.getItem("registros")
-    if (registrosSalvos === null) {
-        return null
-    }
-
     try {
+        const registrosSalvos = localStorage.getItem("registros")
+        if (registrosSalvos === null) {
+            return null
+        }
+
         const registrosConvertidos = JSON.parse(registrosSalvos)
         if (Array.isArray(registrosConvertidos)) {
             return registrosConvertidos.filter(registroValido)
@@ -75,7 +76,7 @@ const carregarRegistrosLocais = () => {
 
         console.error("Erro, os dados salvos não são uma lista de registros.")
     } catch (erro) {
-        console.error("Erro, dados de registros inválidos.", erro)
+        console.error("Não foi possível ler os registros locais.", erro)
     }
 
     return null
@@ -94,11 +95,23 @@ const carregarCatalogoInicial = async () => {
             throw new Error("O catálogo inicial precisa ser uma lista de registros.")
         }
 
+        erroCarregamentoCatalogo = false
         return catalogo.filter(registroValido)
     } catch (erro) {
         console.error("Erro ao carregar o catálogo inicial.", erro)
+        erroCarregamentoCatalogo = true
         return []
     }
+}
+
+const limparErros = () => {
+    erroTitulo.textContent = ""
+    erroCategoria.textContent = ""
+    erroTema.textContent = ""
+    erroData.textContent = ""
+    erroDescricao.textContent = ""
+    erroLinkExecucao.textContent = ""
+    erroLinkCodigo.textContent = ""
 }
 
 const validarCampos = () => {
@@ -112,13 +125,7 @@ const validarCampos = () => {
     const linkExecucao = f_linkExecucao.value.trim()
     const linkCodigo = f_linkCodigo.value.trim()
 
-    erroTitulo.textContent = ""
-    erroCategoria.textContent = ""
-    erroTema.textContent = ""
-    erroData.textContent = ""
-    erroDescricao.textContent = ""
-    erroLinkExecucao.textContent = ""
-    erroLinkCodigo.textContent = ""
+    limparErros()
 
     if (titulo === "") {
         erroTitulo.textContent = "*Campo obrigatório"
@@ -190,6 +197,7 @@ const limparCampos = () => {
     f_descricao.value = ""
     f_linkExecucao.value = ""
     f_linkCodigo.value = ""
+    limparErros()
 }
 
 const atualizarResumo = () => {
@@ -235,9 +243,13 @@ const exibirRegistros = () => {
     }
 
     if (registrosFiltrados.length === 0) {
-        const mensagemEstadoVazio = registros.length === 0
-            ? "Nenhum exercício ou projeto registrado ainda."
-            : "Nenhum exercício ou projeto encontrado."
+        let mensagemEstadoVazio = "Nenhum exercício ou projeto encontrado."
+
+        if (registros.length === 0) {
+            mensagemEstadoVazio = erroCarregamentoCatalogo
+                ? "Não foi possível carregar os exercícios e projetos. Tente novamente mais tarde."
+                : "Nenhum exercício ou projeto registrado ainda."
+        }
 
         listaRegistros.innerHTML = `
         <div class="estado-vazio">

@@ -24,11 +24,12 @@ Cada registro documenta a prática realizada, sua data e os conceitos envolvidos
 
 ## Decisões técnicas
 
+- **Estilo dos exercícios:** cada exercício tem seu próprio `style.css`, seguindo as cores e o visual do dashboard.
 - **JavaScript puro:** implementação direta da lógica e da manipulação do DOM, sem bibliotecas ou frameworks.
 - **localStorage:** persistência dos registros no navegador, sem necessidade de servidor nesta versão.
 - **Busca e filtros combinados:** título, tema, categoria e status podem ser usados em conjunto; o resumo mantém os totais gerais dos registros.
 - **Renderização dos textos:** os campos dos registros são inseridos nos cards com `textContent`.
-- **Organização dos exercícios:** os arquivos ficarão separados em pastas dentro do projeto, permitindo executar cada exercício e consultar seu código pelo Dashboard. Os registros serão exibidos do mais recente para o mais antigo, sem retirar os exercícios iniciais que mostram minha evolução.
+- **Organização dos exercícios:** os arquivos ficam separados em pastas dentro do projeto, permitindo executar cada exercício e consultar seu código pelo Dashboard. Os registros são exibidos do mais recente para o mais antigo, sem retirar os exercícios iniciais que mostram minha evolução.
 - **Dados compartilhados:** o catálogo inicial fica em `data/registros.json` e é carregado quando o visitante ainda não tem registros no `localStorage`. As alterações feitas pelo gerenciamento continuam salvas somente no navegador utilizado. Futuramente, a API e o banco de dados permitirão que os registros cadastrados sejam compartilhados entre todos os visitantes.
 
 ## Funcionalidades
@@ -49,9 +50,11 @@ Cada registro documenta a prática realizada, sua data e os conceitos envolvidos
 - [x] Links para visualizar o código
 - [x] Links para executar exercícios e projetos no navegador
 - [x] Carregar o catálogo inicial de `data/registros.json` para visitantes sem registros locais
-- [x] Adicionar o primeiro projeto ao catálogo público
-- [ ] Adicionar exercícios e projetos concluídos ao catálogo público
+- [x] Adicionar o dashboard como primeiro projeto do catálogo público
+- [x] Adicionar exercícios ao catálogo público
 - [ ] Publicação do dashboard
+
+Os exercícios ficam na pasta `exercicios/`. Cada um tem seu enunciado no início do JavaScript e pode ser aberto pelo dashboard, com acesso ao código no GitHub. As datas foram organizadas para representar a sequência de estudo entre agosto e outubro de 2026 e podem ser estimativas quando não há um registro exato do dia em que cada exercício foi feito.
 
 ## Evolução full stack
 
@@ -71,11 +74,15 @@ A prioridade é concluir e publicar a primeira versão com HTML, CSS e JavaScrip
 
 Não é necessário instalar dependências. Um servidor local é usado para permitir o carregamento de `data/registros.json`.
 
-## Estrutura planejada para a primeira versão
+## Estrutura da primeira versão
 
 ```text
 javascript-projects-dashboard/
-├── exercicios/  # Exercícios executáveis organizados em pastas
+├── exercicios/  # 28 exercícios, cada um em sua própria pasta
+│   └── exercicio-NN-nome/
+│       ├── index.html
+│       ├── style.css
+│       └── script.js
 ├── data/        # Catálogo inicial da versão pública
 ├── index.html   # Estrutura da página
 ├── style.css    # Estilos e responsividade
@@ -85,10 +92,10 @@ javascript-projects-dashboard/
 
 ## Status
 
-Em desenvolvimento. O fluxo de cadastro, listagem, edição e remoção está implementado, assim como a busca, os filtros, o resumo, os links para código e execução e o carregamento do catálogo inicial. A publicação permanece pendente.
+Em desenvolvimento. O fluxo de cadastro, listagem, edição e remoção está implementado, assim como a busca, os filtros, o resumo, os links para código e execução e o carregamento do catálogo inicial com os 28 exercícios. A publicação permanece pendente.
 
 Os registros criados pelo gerenciamento ainda ficam salvos somente no navegador utilizado. Não há sincronização entre dispositivos, e as alterações não são compartilhadas com outros visitantes. O carregamento e o salvamento já tratam dados inválidos e falhas de armazenamento.
 
 ## Apoio de IA
 
-Utilizo IA como apoio para explicações, revisão de código e investigação de problemas.
+Utilizo IA como apoio para explicações, revisão de código e investigação de problemas. A revisão dos exercícios também contou com apoio de IA em correções de validação, adaptação para o navegador e organização da apresentação.
