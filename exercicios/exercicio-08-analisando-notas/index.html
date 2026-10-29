@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 08 — Análise de notas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="pagina">
+        <header class="cabecalho">
+            <a class="voltar-dashboard" href="../../index.html">← Voltar ao dashboard</a>
+            <p class="numero-exercicio">Exercício 08</p>
+            <h1>Análise das notas de uma turma</h1>
+            <p class="enunciado">Dadas as notas [8, 5, 9, 6, 4, 10, 7, 3], apresente um relatório da turma, considerando aprovação a partir de 7.</p>
+        </header>
+        <section class="painel">
+            <h2>Notas fornecidas</h2>
+            <p id="dados"></p>
+        </section>
+        <section class="painel">
+            <div class="cabecalho-resultado">
+                <h2>Resultado</h2>
+                <button type="button" id="btnExecutar">Analisar notas</button>
+            </div>
+            <pre id="resultado" aria-live="polite">Aguardando análise.</pre>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

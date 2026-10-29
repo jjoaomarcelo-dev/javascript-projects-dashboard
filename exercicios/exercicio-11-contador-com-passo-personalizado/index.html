@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11 — Contador com passo personalizado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="pagina">
+        <header class="cabecalho">
+            <a class="voltar-dashboard" href="../../index.html">← Voltar ao dashboard</a>
+            <p class="numero-exercicio">Exercício 11</p>
+            <h1>Contador com passo</h1>
+            <p class="enunciado">Amplie o contador para permitir que o usuário escolha o tamanho do incremento e do decremento.</p>
+        </header>
+        <section class="painel">
+            <label for="passo">Digite o passo aqui:</label>
+            <input type="number" id="passo" value="1" min="1" step="1">
+            <p id="mensagem" aria-live="polite"></p>
+            <p id="numero" class="resultado-item">0</p>
+            <div class="operacoes">
+                <button id="bt1" type="button">Aumentar</button>
+                <button id="bt2" type="button" class="secundario">Diminuir</button>
+                <button id="bt3" type="button" class="aviso">Zerar</button>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

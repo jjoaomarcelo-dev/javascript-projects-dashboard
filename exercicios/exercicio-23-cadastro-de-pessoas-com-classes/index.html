@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 23 — Cadastro com classes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="cartao">
+        <header class="cabecalho">
+            <a class="voltar-dashboard" href="../../index.html">← Voltar ao dashboard</a>
+            <p class="aula">Exercício 23</p>
+            <h1>Cadastro de pessoas</h1>
+            <p class="enunciado">Construa um cadastro de pessoas com nome e idade, apresentando a relação de pessoas registradas.</p>
+        </header>
+
+        <section class="formulario" aria-labelledby="titulo-formulario">
+            <h2 id="titulo-formulario">Nova pessoa</h2>
+
+            <div class="campoForm">
+                <label for="f_nome">Nome</label>
+                <input type="text" name="f_nome" id="f_nome" placeholder="Ex.: João" autocomplete="off">
+            </div>
+
+            <div class="campoForm">
+                <label for="f_idade">Idade</label>
+                <input type="number" name="f_idade" id="f_idade" placeholder="Ex.: 25" min="0" step="1">
+            </div>
+
+            <button type="button" id="btnAdicionar">Adicionar pessoa</button>
+        </section>
+
+        <section class="resultado" aria-live="polite" aria-labelledby="titulo-resultado">
+            <h2 id="titulo-resultado">Resultado</h2>
+            <div class="res">Nenhuma pessoa adicionada.</div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

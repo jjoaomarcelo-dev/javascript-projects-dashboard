@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 20 — Controle de estoque com Map</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="cartao">
+        <header class="cabecalho">
+            <a class="voltar-dashboard" href="../../index.html">← Voltar ao dashboard</a>
+            <p class="numero-exercicio">Exercício 20</p>
+            <h1>Controle de estoque com Map</h1>
+            <p class="enunciado">Construa um controle de estoque em que cada nome de produto esteja associado à sua quantidade.</p>
+        </header>
+
+        <section class="formulario" aria-labelledby="titulo-cadastro">
+            <h2 id="titulo-cadastro">Cadastrar ou atualizar</h2>
+
+            <div class="campos">
+                <div class="campo">
+                    <label for="nomeProduto">Produto</label>
+                    <input type="text" id="nomeProduto" placeholder="Ex.: Teclado" autocomplete="off">
+                </div>
+
+                <div class="campo">
+                    <label for="quantidadeProduto">Quantidade</label>
+                    <input type="number" id="quantidadeProduto" min="0" step="1" placeholder="Ex.: 5">
+                </div>
+            </div>
+
+            <button type="button" id="btnCadastrar" class="btn-principal">
+                Cadastrar produto
+            </button>
+        </section>
+
+        <div class="acoes">
+            <button type="button" id="btnConsultar">Consultar produto</button>
+            <button type="button" id="btnRemover" class="btn-remover">Remover produto</button>
+        </div>
+
+        <section class="resultado" aria-live="polite">
+            <h2>Mensagem</h2>
+            <p id="resultado" aria-live="polite">O estoque está vazio.</p>
+        </section>
+
+        <section class="estoque" aria-labelledby="titulo-estoque">
+            <div class="estoque-cabecalho">
+                <h2 id="titulo-estoque">Produtos cadastrados</h2>
+                <p>Total: <strong id="totalProdutos">0</strong></p>
+            </div>
+            <div id="listaEstoque" class="lista-estoque">
+                Nenhum produto cadastrado.
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

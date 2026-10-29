@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 17 — Situação da turma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="cartao">
+        <header class="cabecalho">
+            <a class="voltar-dashboard" href="../../index.html">← Voltar ao dashboard</a>
+            <p class="numero-exercicio">Exercício 17</p>
+            <h1>Situação da turma</h1>
+            <p class="enunciado">Receba notas de uma turma e determine se todos atingiram a média mínima de 7.</p>
+        </header>
+
+        <section class="informacao" aria-labelledby="titulo-media">
+            <h2 id="titulo-media">Média para aprovação</h2>
+            <p class="media">7</p>
+        </section>
+
+        <div class="campo-nota">
+            <label for="nota">Digite uma nota de 0 a 10</label>
+            <div class="entrada-nota">
+                <input
+                    type="number"
+                    id="nota"
+                    min="0"
+                    max="10"
+                    step="0.1"
+                    placeholder="Ex.: 8.5"
+                >
+                <button type="button" id="btnAdicionar">Adicionar nota</button>
+            </div>
+        </div>
+
+        <section class="lista" aria-labelledby="titulo-notas">
+            <h2 id="titulo-notas">Notas da turma</h2>
+            <p id="listaNotas"></p>
+        </section>
+
+        <button type="button" id="btnVerificar" class="btn-verificar">
+            Verificar turma
+        </button>
+
+        <section class="resultado" aria-live="polite">
+            <h2>Resultado</h2>
+            <p id="resultado" aria-live="polite">Clique no botão para verificar as notas.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

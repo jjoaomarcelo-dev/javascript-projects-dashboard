@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 18 — Disponibilidade de produtos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="cartao">
+        <header class="cabecalho">
+            <a class="voltar-dashboard" href="../../index.html">← Voltar ao dashboard</a>
+            <p class="numero-exercicio">Exercício 18</p>
+            <h1>Disponibilidade de produtos</h1>
+            <p class="enunciado">Permita consultar se um produto pertence ao catálogo de periféricos apresentado na página.</p>
+        </header>
+
+        <section class="lista" aria-labelledby="titulo-lista">
+            <h2 id="titulo-lista">Produtos cadastrados</h2>
+            <p id="listaProdutos"></p>
+        </section>
+
+        <div class="campo">
+            <label for="nomeProduto">Nome do produto</label>
+            <input
+                type="text"
+                id="nomeProduto"
+                placeholder="Ex.: Teclado"
+                autocomplete="off"
+            >
+        </div>
+
+        <button type="button" id="btnVerificar">Verificar estoque</button>
+
+        <section class="resultado" aria-live="polite">
+            <h2>Resultado</h2>
+            <p id="resultado" aria-live="polite">Digite um produto para consultar o estoque.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

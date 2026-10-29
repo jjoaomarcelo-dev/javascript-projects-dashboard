@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 28 — Biblioteca com herança</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="pagina">
+        <header class="cabecalho">
+            <a class="voltar-dashboard" href="../../index.html">← Voltar ao dashboard</a>
+            <p class="numero-exercicio">Exercício 28</p>
+            <h1>Biblioteca com herança</h1>
+            <p class="enunciado">Evolução da biblioteca do exercício 27, usando classes, herança e regras de empréstimo.</p>
+        </header>
+
+        <section class="painel" aria-labelledby="titulo-cadastro">
+            <h2 id="titulo-cadastro">Cadastrar livro</h2>
+
+            <form id="formLivro">
+                <div class="campos">
+                    <label for="titulo">Título
+                        <input id="titulo" type="text" placeholder="Ex.: O Hobbit" autocomplete="off">
+                    </label>
+
+                    <label for="autor">Autor
+                        <input id="autor" type="text" placeholder="Ex.: J. R. R. Tolkien" autocomplete="off">
+                    </label>
+
+                    <label for="categoria">Categoria
+                        <input id="categoria" type="text" placeholder="Ex.: Fantasia" autocomplete="off">
+                    </label>
+
+                    <label for="tipoLivro">Tipo de livro
+                        <select id="tipoLivro">
+                            <option value="fisico">Livro físico</option>
+                            <option value="digital">Livro digital</option>
+                        </select>
+                    </label>
+                </div>
+
+                <button id="btnSalvar" type="submit">Adicionar livro</button>
+            </form>
+        </section>
+
+        <section class="painel mensagem" aria-live="polite">
+            <h2>Mensagem</h2>
+            <p id="resultado">Cadastre um livro físico ou digital para começar.</p>
+        </section>
+
+        <section class="painel" aria-labelledby="titulo-biblioteca">
+            <div class="titulo-lista">
+                <h2 id="titulo-biblioteca">Livros cadastrados</h2>
+                <p>Total: <strong id="totalLivros">0</strong></p>
+            </div>
+            <div id="listaLivros" class="lista-livros">Nenhum livro cadastrado.</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

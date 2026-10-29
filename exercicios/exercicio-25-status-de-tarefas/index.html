@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 25 — Status de tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="cartao">
+        <header class="cabecalho">
+            <a class="voltar-dashboard" href="../../index.html">← Voltar ao dashboard</a>
+            <p class="numero-exercicio">Exercício 25</p>
+            <h1>Status de tarefas</h1>
+            <p class="enunciado">Cadastre, consulte, atualize e remova tarefas usando objetos literais.</p>
+        </header>
+
+        <section class="formulario" aria-labelledby="titulo-tarefa">
+            <h2 id="titulo-tarefa">Dados da tarefa</h2>
+
+            <div class="campos">
+                <div class="campo">
+                    <label for="tituloTarefa">Título</label>
+                    <input type="text" id="tituloTarefa" placeholder="Ex.: Praticar find" autocomplete="off">
+                </div>
+
+                <div class="campo">
+                    <label for="statusTarefa">Status</label>
+                    <select id="statusTarefa">
+                        <option value="pendente">Pendente</option>
+                        <option value="concluida">Concluída</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="button" id="btnSalvar">Cadastrar ou atualizar tarefa</button>
+
+            <div class="acoes" aria-label="Ações da tarefa">
+                <button type="button" id="btnConsultar">Consultar tarefa</button>
+                <button type="button" id="btnRemover" class="btn-remover">Remover tarefa</button>
+            </div>
+        </section>
+
+        <section class="resultado" aria-live="polite">
+            <h2>Mensagem</h2>
+            <p id="resultado">Use os campos acima para gerenciar as tarefas.</p>
+        </section>
+
+        <section class="lista-tarefas" aria-labelledby="titulo-lista-tarefas">
+            <div class="lista-cabecalho">
+                <h2 id="titulo-lista-tarefas">Tarefas cadastradas</h2>
+                <p>Total: <strong id="totalTarefas">0</strong></p>
+            </div>
+            <div id="listaTarefas">Nenhuma tarefa cadastrada.</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

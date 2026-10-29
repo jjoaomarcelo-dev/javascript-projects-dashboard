@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 22 — Lista de presença com Set</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="cartao">
+        <header class="cabecalho">
+            <a class="voltar-dashboard" href="../../index.html">← Voltar ao dashboard</a>
+            <p class="numero-exercicio">Exercício 22</p>
+            <h1>Lista de presença com Set</h1>
+            <p class="enunciado">Desenvolva uma lista de presença que permita registrar, consultar e remover participantes sem duplicações.</p>
+        </header>
+
+        <section class="formulario painel-presenca" aria-labelledby="titulo-participante">
+            <h2 id="titulo-participante">Participante</h2>
+            <label for="nome">Nome da pessoa</label>
+            <input id="nome" type="text" placeholder="Ex.: João" autocomplete="off" aria-describedby="ajudaPresenca">
+            <p id="ajudaPresenca">Digite o nome para adicionar, verificar a presença ou remover da lista.</p>
+            <div class="acoes acoes-presenca" role="group" aria-label="Ações do participante">
+                <button id="btnAdicionar" type="button">Adicionar à lista</button>
+                <button id="btnVerificar" type="button">Verificar presença</button>
+                <button id="btnRemover" type="button">Remover</button>
+            </div>
+            <p id="resultado" class="retorno-presenca" aria-live="polite">A lista está vazia.</p>
+        </section>
+
+        <section class="lista" aria-labelledby="titulo-presentes">
+            <div class="lista-cabecalho">
+                <h2 id="titulo-presentes">Pessoas presentes</h2>
+                <p class="total-presenca">Total <strong id="total" aria-live="polite">0</strong></p>
+            </div>
+            <div id="listaPessoas">Nenhuma pessoa cadastrada.</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

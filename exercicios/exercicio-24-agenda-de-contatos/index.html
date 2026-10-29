@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 24 — Agenda de contatos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="cartao">
+        <header class="cabecalho">
+            <a class="voltar-dashboard" href="../../index.html">← Voltar ao dashboard</a>
+            <p class="numero-exercicio">Exercício 24</p>
+            <h1>Agenda de contatos</h1>
+            <p class="enunciado">Cadastre, consulte, atualize e remova contatos usando objetos literais.</p>
+        </header>
+
+        <section class="formulario" aria-labelledby="titulo-contato">
+            <h2 id="titulo-contato">Dados do contato</h2>
+
+            <div class="campos">
+                <div class="campo">
+                    <label for="nomeContato">Nome</label>
+                    <input type="text" id="nomeContato" placeholder="Ex.: Maria" autocomplete="off">
+                </div>
+
+                <div class="campo">
+                    <label for="telefoneContato">Telefone</label>
+                    <input type="tel" id="telefoneContato" placeholder="Ex.: 99999-1111" autocomplete="off">
+                </div>
+
+                <div class="campo campo-cidade">
+                    <label for="cidadeContato">Cidade</label>
+                    <input type="text" id="cidadeContato" placeholder="Ex.: Florianópolis" autocomplete="off">
+                </div>
+            </div>
+
+            <button type="button" id="btnCadastrar">Cadastrar ou atualizar contato</button>
+
+            <div class="acoes" aria-label="Ações do contato">
+                <button type="button" id="btnConsultar">Consultar contato</button>
+                <button type="button" id="btnRemover" class="btn-remover">Remover contato</button>
+            </div>
+        </section>
+
+        <section class="resultado" aria-live="polite">
+            <h2>Mensagem</h2>
+            <p id="resultado">Use os campos acima para gerenciar a agenda.</p>
+        </section>
+
+        <section class="lista-contatos" aria-labelledby="titulo-lista-contatos">
+            <div class="lista-cabecalho">
+                <h2 id="titulo-lista-contatos">Contatos cadastrados</h2>
+                <p>Total: <strong id="totalContatos">0</strong></p>
+            </div>
+            <div id="listaContatos">Nenhum contato cadastrado.</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

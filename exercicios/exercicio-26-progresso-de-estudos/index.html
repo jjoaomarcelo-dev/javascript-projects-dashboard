@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 26 — Progresso de estudos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="cartao">
+        <header class="cabecalho">
+            <a class="voltar-dashboard" href="../../index.html">← Voltar ao dashboard</a>
+            <p class="numero-exercicio">Exercício 26</p>
+            <h1>Progresso de estudos</h1>
+            <p class="enunciado">Registre estudos, atualize o progresso e filtre a lista por status.</p>
+        </header>
+
+        <section class="formulario" aria-labelledby="titulo-estudo">
+            <h2 id="titulo-estudo">Dados do estudo</h2>
+
+            <div class="campos">
+                <div class="campo">
+                    <label for="temaEstudo">Tema</label>
+                    <input type="text" id="temaEstudo" placeholder="Ex.: Objetos" autocomplete="off">
+                </div>
+
+                <div class="campo">
+                    <label for="categoriaEstudo">Categoria</label>
+                    <select id="categoriaEstudo">
+                        <option value="">Selecione a categoria</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="CSS">CSS</option>
+                        <option value="HTML">HTML</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="horasEstudo">Horas estudadas</label>
+                    <input type="number" id="horasEstudo" min="0" step="1" placeholder="Ex.: 3">
+                </div>
+
+                <div class="campo">
+                    <label for="statusEstudo">Status</label>
+                    <select id="statusEstudo">
+                        <option value="pendente">Pendente</option>
+                        <option value="concluido">Concluído</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="button" id="btnSalvar">Cadastrar ou atualizar estudo</button>
+
+            <div class="acoes" aria-label="Ações do estudo">
+                <button type="button" id="btnConsultar">Consultar estudo</button>
+                <button type="button" id="btnRemover" class="btn-remover">Remover estudo</button>
+            </div>
+        </section>
+
+        <section class="filtros" aria-labelledby="titulo-filtros">
+            <h2 id="titulo-filtros">Filtrar estudos</h2>
+            <label for="filtroStatus">Status</label>
+            <select id="filtroStatus">
+                <option value="todos">Todos</option>
+                <option value="concluido">Concluídos</option>
+                <option value="pendente">Pendentes</option>
+            </select>
+        </section>
+
+        <section class="resultado" aria-live="polite">
+            <h2>Mensagem</h2>
+            <p id="resultado">Use os campos acima para acompanhar seus estudos.</p>
+        </section>
+
+        <section class="lista-estudos" aria-labelledby="titulo-lista-estudos">
+            <div class="lista-cabecalho">
+                <h2 id="titulo-lista-estudos">Estudos cadastrados</h2>
+                <p>Total: <strong id="totalEstudos">0</strong></p>
+            </div>
+            <div id="listaEstudos">Nenhum estudo cadastrado.</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

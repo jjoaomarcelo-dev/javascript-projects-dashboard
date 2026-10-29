@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 19 — Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="pagina">
+        <header class="cabecalho">
+            <a class="voltar-dashboard" href="../../index.html">← Voltar ao dashboard</a>
+            <p class="numero-exercicio">Exercício 19</p>
+            <h1>Calculadora</h1>
+            <p class="enunciado">Desenvolva uma calculadora com dois operandos e operações de soma, subtração, multiplicação e divisão.</p>
+        </header>
+        <section class="painel calculadora" aria-labelledby="titulo-calculo">
+            <h2 id="titulo-calculo">Faça seu cálculo</h2>
+            <div class="grade-campos">
+                <label for="numero1">Primeiro número
+                    <input type="number" id="numero1" step="1" placeholder="Ex.: 8" aria-describedby="ajudaCalculo">
+                </label>
+                <label for="numero2">Segundo número
+                    <input type="number" id="numero2" step="1" placeholder="Ex.: 2" aria-describedby="ajudaCalculo">
+                </label>
+            </div>
+            <p id="ajudaCalculo">Informe dois números inteiros e escolha uma operação.</p>
+            <div class="operacoes" role="group" aria-label="Operações">
+                <button type="button" id="somar" class="botao-operacao" aria-label="Somar">+</button>
+                <button type="button" id="subtrair" class="botao-operacao" aria-label="Subtrair">-</button>
+                <button type="button" id="multiplicar" class="botao-operacao" aria-label="Multiplicar">x</button>
+                <button type="button" id="dividir" class="botao-operacao" aria-label="Dividir">/</button>
+            </div>
+            <div id="visor" aria-labelledby="titulo-resultado">
+                <h2 id="titulo-resultado">Resultado</h2>
+                <p id="resultado" aria-live="polite">Aguardando operação.</p>
+            </div>
+            <p id="mensagem" aria-live="polite"></p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

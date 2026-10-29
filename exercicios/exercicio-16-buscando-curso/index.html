@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 16 — Busca de curso</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="cartao">
+        <header class="cabecalho">
+            <a class="voltar-dashboard" href="../../index.html">← Voltar ao dashboard</a>
+            <p class="numero-exercicio">Exercício 16</p>
+            <h1>Busca de curso</h1>
+            <p class="enunciado">Permita consultar um curso no catálogo [HTML, CSS, JavaScript, React, Node.js].</p>
+        </header>
+
+        <section class="lista" aria-labelledby="titulo-lista">
+            <h2 id="titulo-lista">Cursos disponíveis</h2>
+            <p id="listaCursos"></p>
+        </section>
+
+        <div class="campo">
+            <label for="nomeCurso">Nome do curso</label>
+            <input type="text" id="nomeCurso" placeholder="Ex.: JavaScript">
+        </div>
+
+        <button type="button" id="btnBuscar">Buscar curso</button>
+
+        <section class="resultado" aria-live="polite">
+            <h2>Resultado</h2>
+            <p id="resultado" aria-live="polite">Faça uma busca para ver o resultado.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 27 — Biblioteca com classes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="pagina biblioteca">
+        <header class="cabecalho">
+            <a class="voltar-dashboard" href="../../index.html">← Voltar ao dashboard</a>
+            <p class="numero-exercicio">Exercício 27</p>
+            <h1>Biblioteca com classes</h1>
+            <p class="enunciado">Use classes para cadastrar, consultar, emprestar e devolver livros em uma biblioteca pessoal.</p>
+        </header>
+
+        <section class="painel formulario cadastro-livro" aria-labelledby="titulo-cadastro">
+            <h2 id="titulo-cadastro">Cadastrar livro</h2>
+            <div class="campos">
+                <label for="titulo" class="campo-titulo-livro">Título<input id="titulo" type="text" placeholder="Ex.: O Hobbit" autocomplete="off"></label>
+                <label for="autor">Autor<input id="autor" type="text" placeholder="Ex.: João" autocomplete="off"></label>
+                <label for="categoria">Categoria<input id="categoria" type="text" placeholder="Ex.: Fantasia" autocomplete="off"></label>
+            </div>
+            <button id="btnCadastrar" type="button">Cadastrar livro</button>
+            <p id="resultadoCadastro" class="retorno-biblioteca" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="painel gerenciamento-livros" aria-labelledby="titulo-acoes">
+            <h2 id="titulo-acoes">Consultar e movimentar</h2>
+            <label for="tituloBusca">Título do livro</label>
+            <input id="tituloBusca" type="text" placeholder="Ex.: O Hobbit" autocomplete="off" aria-describedby="ajudaBusca">
+            <p id="ajudaBusca">Informe o título cadastrado e escolha o que deseja fazer.</p>
+            <div class="acoes-livro" role="group" aria-label="Ações do livro">
+                <button id="btnConsultar" class="secundario" type="button">Consultar</button>
+                <button id="btnEmprestar" type="button">Emprestar</button>
+                <button id="btnDevolver" class="secundario" type="button">Devolver</button>
+            </div>
+            <p id="resultado" class="retorno-biblioteca" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="painel lista" aria-labelledby="titulo-lista">
+            <div class="titulo-lista">
+                <h2 id="titulo-lista">Livros cadastrados</h2>
+                <button id="btnListar" class="secundario" type="button">Atualizar lista</button>
+            </div>
+            <div id="listaLivros">Nenhum livro cadastrado.</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

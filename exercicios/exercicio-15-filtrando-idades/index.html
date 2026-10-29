@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 15 — Filtro de maioridade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="pagina">
+    <header class="cabecalho">
+            <a class="voltar-dashboard" href="../../index.html">← Voltar ao dashboard</a>
+            <p class="numero-exercicio">Exercício 15</p>
+        <h1>Filtro de maioridade</h1>
+        <p class="enunciado">A partir de [12, 18, 25, 16, 30, 14, 21, 17], apresente as pessoas com idade suficiente para a maioridade, considerada aos 18 anos.</p>
+    </header>
+        <section class="lista-idades" aria-labelledby="titulo-lista">
+            <h2 id="titulo-lista">Lista original</h2>
+            <p id="idades"></p>
+        </section>
+
+        <button type="button" id="btnFiltrar" class="botao">
+            Mostrar maiores de idade
+        </button>
+
+        <section class="resultado" aria-labelledby="titulo-resultado" aria-live="polite">
+            <h2 id="titulo-resultado">Resultado</h2>
+            <p id="resultado" aria-live="polite">Clique no botão para filtrar as idades.</p>
+            <p id="quantidade"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
