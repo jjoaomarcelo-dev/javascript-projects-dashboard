@@ -1,12 +1,18 @@
 # JavaScript Projects Dashboard
 
-Dashboard desenvolvido para organizar minha prática em JavaScript durante a retomada ao desenvolvimento de software.
+**[Acessar o Dashboard](https://jjoaomarcelo-dev.github.io/javascript-projects-dashboard/)**
+
+Dashboard desenvolvido para organizar e acompanhar minha prática em JavaScript durante a retomada ao desenvolvimento de software.
 
 ## Sobre o projeto
 
-O JavaScript Projects Dashboard reúne exercícios e projetos em um painel com cadastro, edição, remoção, busca, filtros e indicadores. Cada registro contém título, categoria, tema, data da prática, status, descrição e, quando disponível, links para execução e código.
+O JavaScript Projects Dashboard reúne exercícios e projetos em um painel com cadastro, edição, remoção, busca, filtros e indicadores.
 
-A proposta é centralizar todo o trabalho realizado para facilitar a consulta e acessar cada exercício ou projeto diretamente pelo painel.
+Cada registro contém título, categoria, tema, data da prática, status, descrição e, quando disponíveis, links para execução e código.
+
+A proposta é centralizar as atividades realizadas, facilitar a consulta aos conteúdos estudados e permitir o acesso direto aos exercícios e projetos.
+
+O Dashboard também funciona como um registro da minha evolução técnica, recebendo novas atividades conforme avanço nos estudos.
 
 ## Tecnologias
 
@@ -16,21 +22,25 @@ A proposta é centralizar todo o trabalho realizado para facilitar a consulta e 
 
 ## Desenvolvimento
 
-O projeto evolui de forma incremental. Cada funcionalidade parte de uma necessidade do painel e envolve definir o comportamento, implementar, testar no navegador e revisar o código.
+O projeto evolui de forma incremental. Cada funcionalidade parte de uma necessidade do painel e envolve definir o comportamento esperado, implementar, testar no navegador e revisar o código.
 
-O código utiliza funções, arrays, objetos, eventos, manipulação do DOM, validação de formulários e persistência local. As funcionalidades de cadastro, edição, remoção, busca, filtros e links mantêm os dados e a interface sincronizados.
+A implementação utiliza funções, arrays, objetos, eventos, manipulação do DOM, validação de formulários e persistência local.
+
+As funcionalidades de cadastro, edição, remoção, busca, filtros e links mantêm os dados e a interface sincronizados.
 
 Cada registro documenta a prática realizada, sua data e os conceitos envolvidos.
 
 ## Decisões técnicas
 
-- **Estilo dos exercícios:** cada exercício tem seu próprio `style.css`, seguindo as cores e o visual do dashboard.
 - **JavaScript puro:** implementação direta da lógica e da manipulação do DOM, sem bibliotecas ou frameworks.
 - **localStorage:** persistência dos registros no navegador, sem necessidade de servidor nesta versão.
-- **Busca e filtros combinados:** título, tema, categoria e status podem ser usados em conjunto; o resumo mantém os totais gerais dos registros.
-- **Renderização dos textos:** os campos dos registros são inseridos nos cards com `textContent`.
-- **Organização dos exercícios:** os arquivos ficam separados em pastas dentro do projeto, permitindo executar cada exercício e consultar seu código pelo Dashboard. Os registros são exibidos do mais recente para o mais antigo, sem retirar os exercícios iniciais que mostram minha evolução.
-- **Dados compartilhados:** o catálogo inicial fica em `data/registros.json` e é carregado quando o visitante ainda não tem registros no `localStorage`. As alterações feitas pelo gerenciamento continuam salvas somente no navegador utilizado. Futuramente, a API e o banco de dados permitirão que os registros cadastrados sejam compartilhados entre todos os visitantes.
+- **Catálogo inicial:** os registros públicos ficam em `data/registros.json` e são carregados quando o visitante ainda não possui dados armazenados localmente.
+- **Busca e filtros combinados:** permitem localizar registros por título, tema, categoria e status. O resumo mantém os totais gerais dos registros.
+- **Renderização dos textos:** os campos dos registros são inseridos nos cards utilizando `textContent`.
+- **Organização dos exercícios:** cada exercício possui sua própria pasta, contendo HTML, CSS e JavaScript, permitindo execução independente e consulta ao código.
+- **Estilo dos exercícios:** cada exercício possui seu próprio `style.css`, seguindo a identidade visual do Dashboard.
+- **Ordenação:** os registros são exibidos do mais recente para o mais antigo, preservando os exercícios anteriores como parte do histórico de aprendizado.
+- **Dados locais e compartilhamento:** as alterações realizadas pelo gerenciamento são armazenadas somente no navegador utilizado. Uma futura API com banco de dados permitirá compartilhar registros entre diferentes visitantes.
 
 ## Funcionalidades
 
@@ -39,7 +49,7 @@ Cada registro documenta a prática realizada, sua data e os conceitos envolvidos
 - [x] Formulário para exercícios e projetos
 - [x] Leitura e validação dos campos
 - [x] Cadastro e listagem de exercícios e projetos
-- [x] Armazenamento com localStorage
+- [x] Armazenamento com `localStorage`
 - [x] Edição e remoção de registros
 - [x] Resumo de exercícios e projetos
 - [x] Modal para cadastro e edição
@@ -49,14 +59,18 @@ Cada registro documenta a prática realizada, sua data e os conceitos envolvidos
 - [x] Ordenação dos registros do mais recente para o mais antigo
 - [x] Links para visualizar o código
 - [x] Links para executar exercícios e projetos no navegador
-- [x] Carregar o catálogo inicial de `data/registros.json` para visitantes sem registros locais
-- [x] Adicionar o dashboard como primeiro projeto do catálogo público
-- [x] Adicionar exercícios ao catálogo público
-- [ ] Publicação do dashboard
+- [x] Carregamento do catálogo inicial de `data/registros.json`
+- [x] Inclusão do próprio Dashboard no catálogo público
+- [x] Inclusão de exercícios no catálogo público
+- [x] Publicação do Dashboard no GitHub Pages
 
-Os exercícios ficam na pasta `exercicios/`. Cada um tem seu enunciado no início do JavaScript e pode ser aberto pelo dashboard, com acesso ao código no GitHub. As datas foram organizadas para representar a sequência de estudo entre agosto e outubro de 2026 e podem ser estimativas quando não há um registro exato do dia em que cada exercício foi feito.
+Os exercícios ficam organizados na pasta `exercicios/`. Cada um possui seu enunciado no início do arquivo JavaScript e pode ser acessado pelo Dashboard, com links para execução e consulta ao código no GitHub.
+
+As datas dos registros representam a sequência de estudo e podem ser estimativas quando não existe um registro exato do dia em que cada exercício foi realizado.
 
 ## Evolução full stack
+
+As próximas etapas planejadas incluem:
 
 - [ ] Criar uma API para gerenciar os registros
 - [ ] Armazenar os dados em banco de dados
@@ -64,38 +78,76 @@ Os exercícios ficam na pasta `exercicios/`. Cada um tem seu enunciado no iníci
 - [ ] Substituir o catálogo local por registros persistidos pela API
 - [ ] Migrar gradualmente o projeto para TypeScript e React
 
-A prioridade é concluir e publicar a primeira versão com HTML, CSS e JavaScript. A evolução full stack será avaliada em etapas posteriores.
+A primeira versão foi desenvolvida com HTML, CSS e JavaScript puro, priorizando a prática dos fundamentos da linguagem e a compreensão do funcionamento da aplicação.
 
-## Como executar
+A evolução full stack será realizada gradualmente, conforme o avanço dos estudos e as necessidades do projeto.
 
-1. Baixe ou clone o repositório.
-2. No terminal, entre na pasta do projeto e execute `python3 -m http.server`.
-3. Abra `http://localhost:8000` no navegador.
+## Como executar localmente
 
-Não é necessário instalar dependências. Um servidor local é usado para permitir o carregamento de `data/registros.json`.
+1. Clone o repositório:
 
-## Estrutura da primeira versão
+   ```bash
+   git clone https://github.com/jjoaomarcelo-dev/javascript-projects-dashboard.git
+   ```
+
+2. Entre na pasta do projeto:
+
+   ```bash
+   cd javascript-projects-dashboard
+   ```
+
+3. Inicie um servidor local:
+
+   ```bash
+   python3 -m http.server 8000
+   ```
+
+4. Abra no navegador:
+
+   http://localhost:8000
+
+Não é necessário instalar dependências.
+
+O servidor local permite o carregamento do catálogo inicial armazenado em `data/registros.json`.
+
+## Estrutura do projeto
 
 ```text
 javascript-projects-dashboard/
-├── exercicios/  # 28 exercícios, cada um em sua própria pasta
+├── exercicios/
 │   └── exercicio-NN-nome/
 │       ├── index.html
 │       ├── style.css
 │       └── script.js
-├── data/        # Catálogo inicial da versão pública
-├── index.html   # Estrutura da página
-├── style.css    # Estilos e responsividade
-├── script.js    # Lógica do painel
-└── README.md    # Documentação do projeto
+├── data/
+│   └── registros.json
+├── index.html
+├── style.css
+├── script.js
+├── .gitignore
+├── .gitattributes
+└── README.md
 ```
+
+- **`exercicios/`:** exercícios organizados individualmente.
+- **`data/registros.json`:** catálogo inicial de exercícios e projetos.
+- **`index.html`:** estrutura principal do Dashboard.
+- **`style.css`:** estilos e responsividade.
+- **`script.js`:** lógica do painel, eventos, validações e gerenciamento dos registros.
+- **`.gitignore`:** configuração dos arquivos ignorados pelo Git.
+- **`.gitattributes`:** configuração de detecção de linguagens no GitHub.
+- **`README.md`:** documentação do projeto.
 
 ## Status
 
-Em desenvolvimento. O fluxo de cadastro, listagem, edição e remoção está implementado, assim como a busca, os filtros, o resumo, os links para código e execução e o carregamento do catálogo inicial com os 28 exercícios. A publicação permanece pendente.
+**Primeira versão publicada e em evolução contínua.**
 
-Os registros criados pelo gerenciamento ainda ficam salvos somente no navegador utilizado. Não há sincronização entre dispositivos, e as alterações não são compartilhadas com outros visitantes. O carregamento e o salvamento já tratam dados inválidos e falhas de armazenamento.
+O Dashboard reúne exercícios de JavaScript e projetos pessoais, com funcionalidades de cadastro, edição, remoção, busca, filtros, indicadores e acesso ao código e à execução das atividades.
 
-## Apoio de IA
+Novos exercícios e projetos serão adicionados conforme avanço nos estudos e na prática de desenvolvimento.
 
-Utilizo IA como apoio para explicações, revisão de código e investigação de problemas. A revisão dos exercícios também contou com apoio de IA em correções de validação, adaptação para o navegador e organização da apresentação.
+Os registros criados pelo gerenciamento ficam armazenados no navegador por meio do `localStorage`, sem sincronização entre dispositivos ou compartilhamento das alterações com outros visitantes.
+
+O carregamento e o salvamento dos registros incluem tratamento de dados inválidos e falhas de armazenamento.
+
+A evolução para uma arquitetura full stack está planejada para etapas futuras.
