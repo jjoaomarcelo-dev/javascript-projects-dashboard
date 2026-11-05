@@ -5,7 +5,7 @@
     "tema": "HTML, CSS, JavaScript e layout responsivo",
     "data": "2026-10-09",
     "status": "em-desenvolvimento",
-    "descricao": "Página de apresentação do Capíva, projeto pessoal de organização financeira, com temas claro e escuro e acesso ao Controle de Parcelas. Versão publicada; novas funcionalidades pausadas. Data referente à última revisão registrada no repositório.",
+    "descricao": "Landing page responsiva do Capíva, projeto pessoal de organização financeira. Possui temas claro e escuro e acesso ao Controle de Parcelas.",
     "linkExecucao": "https://jjoaomarcelo-dev.github.io/capiva-landing-page/",
     "linkCodigo": "https://github.com/jjoaomarcelo-dev/capiva-landing-page"
   },
@@ -15,7 +15,7 @@
     "tema": "JavaScript, DOM, localStorage e regras de parcelamento",
     "data": "2026-10-09",
     "status": "em-desenvolvimento",
-    "descricao": "Aplicação para cadastrar compras parceladas, acompanhar vencimentos e registrar pagamentos, com dados salvos no navegador. Desenvolvida com apoio de IA em partes da implementação. Versão publicada; novas funcionalidades pausadas. Data referente à última revisão registrada no repositório.",
+    "descricao": "Aplicação para registrar compras parceladas, acompanhar vencimentos e controlar pagamentos com dados salvos no navegador.",
     "linkExecucao": "https://jjoaomarcelo-dev.github.io/capiva-installment-tracker/",
     "linkCodigo": "https://github.com/jjoaomarcelo-dev/capiva-installment-tracker"
   },
